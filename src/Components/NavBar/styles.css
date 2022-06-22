@@ -35,9 +35,9 @@ a{
 }
 
 a.active{
-    color: white;
+    color: #fff;
 }
 
 a:hover{
-    color: white;
+    color: #fff;
 }
