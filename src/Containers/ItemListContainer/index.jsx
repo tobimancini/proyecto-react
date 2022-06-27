@@ -1,4 +1,5 @@
 import React from "react";
+import ItemCount from "../../Components/ItemCount";
 import './styles.css';
 
 const ItemListContainer = ({greeting}) =>{
