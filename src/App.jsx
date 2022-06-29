@@ -5,15 +5,15 @@ import ItemListContainer from './Containers/ItemListContainer';
 
 function App() {
 
-  const handleAdd = () => {
-    console.log("Se agregaron items al carrito.");
+  const handleAdd = (count) => {
+    console.log(`Se agregaron ${count} items al carrito.`);
   }
 
   return (
     <div className='container'>
        <Navbar/>
-       <ItemListContainer greeting="Bienvenidos!"/>
-       <ItemCount handleAdd={handleAdd} initialStock={5} />
+       <ItemListContainer greeting="Welcome!"/>
+       <ItemCount handleAdd={handleAdd} initial={1} stock={5} />
     </div>
   );
 }

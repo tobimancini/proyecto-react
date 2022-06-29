@@ -1,0 +1,42 @@
+.item{
+    height: 300px;
+    width: 330px;
+    background-color: #fff;
+    color: #000;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 2px;
+    border: solid 2px #000;
+}
+
+.itemTitle{
+    font-size: 12px;
+    margin: 5px;
+}
+
+.itemImage{
+    height: 150px;
+    margin: 5px;
+}
+
+.itemPrice{
+    font-size: 25px;
+    color: rgb(35, 148, 69);
+}
+
+.itemDetails{
+    align-self: flex-end;
+    margin-right: 5px;
+    font-size: 16px;
+    font-style: italic;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+
+.itemDetails:hover{
+    color: rgb(47, 47, 217);
+}

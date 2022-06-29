@@ -1,0 +1,10 @@
+.itemList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    width: 100%;
+}
