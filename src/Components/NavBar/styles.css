@@ -16,6 +16,7 @@ ul{
     justify-content: flex-start;
     align-items: center;
     padding-left: 20px;
+    border-bottom: solid 2px rgb(198, 198, 198);
 }
 
 li{

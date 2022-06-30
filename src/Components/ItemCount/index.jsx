@@ -15,7 +15,7 @@ const ItemCount = ({handleAdd, initial, stock}) => {
     return (
         <div className="itemCount">
             <div className="itemYStock">
-                <p className="item">item name</p>
+                <p className="itemInfo">item name</p>
                 <p className="stock">stock : {available}</p>
             </div>
             <div className="quantityChange">

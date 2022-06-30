@@ -10,6 +10,7 @@
     border: solid 1px rgb(161, 211, 255);
     border-radius: 2px;
     background-color: rgb(238, 235, 235);
+    margin: 20px;
 }
 
 .itemYStock{
@@ -20,7 +21,7 @@
     height: auto;
 }
 
-.item{
+.itemInfo{
     font-size: 16px;
     margin-left: 20px;
     font-weight: 600;

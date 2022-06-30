@@ -20,14 +20,14 @@ const ItemListContainer = ({greeting}) =>{
         }
 
         getProductos();
-    }, [])
+    }, []);
     
     return (
         <div className="itemListContainer">
             <p className="greeting">{greeting}</p>
             {
             productos?
-            <ItemList products={productos}/> :
+            <ItemList products={productos} /> :
             null
             }
         </div>
