@@ -15,7 +15,11 @@
 
 .itemTitle{
     font-size: 12px;
-    margin: 5px;
+    padding: 5px;
+    width: 100%;
+    height: auto;
+    border-bottom: solid 2px #000;
+    margin-bottom: 5px;
 }
 
 .itemImage{
