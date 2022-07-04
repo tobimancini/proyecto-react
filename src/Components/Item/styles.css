@@ -34,6 +34,7 @@
 
 .itemPrice{
     font-size: 25px;
+    font-weight: 600;
     color: rgb(35, 148, 69);
 }
 
@@ -43,7 +44,7 @@
     font-size: 16px;
     font-style: italic;
     cursor: pointer;
-    transition: all 100ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .itemDetails:hover{

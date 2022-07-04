@@ -1,6 +1,7 @@
 import './App.css';
 import ItemCount from './Components/ItemCount';
 import Navbar from './Components/NavBar';
+import ItemDetailContainer from './Containers/ItemDetailContainer';
 import ItemListContainer from './Containers/ItemListContainer';
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
   return (
     <div className='container'>
        <Navbar/>
-       <ItemListContainer greeting="Welcome!"/>
-       <ItemCount handleAdd={handleAdd} initial={1} stock={5} />
+       <ItemDetailContainer/>
+       {/* <ItemListContainer greeting="Welcome!"/>
+       <ItemCount handleAdd={handleAdd} initial={1} stock={5} /> */}
     </div>
   );
 }

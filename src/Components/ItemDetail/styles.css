@@ -1,0 +1,39 @@
+.productDetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+}
+
+.productImage{
+    width: 30%;
+    margin-right: 100px;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    width: 800px;
+    height: 300px;
+}
+
+.productTitle{
+    color: aliceblue;
+    font-size: 25px;
+    border-bottom: solid 2px #fff;
+}
+
+.productDescription{
+    color: rgb(208, 208, 208);
+    font-size: 16px;
+}
+
+.productPrice{
+    /* align-self: flex-end; */
+    color: #fff;
+    font-size: 40px;
+}
