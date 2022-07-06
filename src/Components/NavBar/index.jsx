@@ -1,17 +1,18 @@
 import React from "react";
 import CartWidget from "../CartWidget";
 import './styles.css';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
-    let cartQty="+1"
 
     return (
         <ul>
-            <li><a className="active" href="#home">home</a></li>
-            <li><a href="#news">news</a></li>
-            <li><a href="#contact">contact</a></li>
-            <li><a href="#about">about</a></li>
-            <li><CartWidget/><p className="count">{cartQty}</p></li>
+            <li><Link className="active" to='/'>home</Link></li>
+            <li><Link to='/category/electronics'>electronics</Link></li>
+            <li><Link to='/category/jewelery'>jewelery</Link></li>
+            <li><Link to="/category/women's clothing">women's clothing</Link></li>
+            <li><Link to="/category/men's clothing">men's clothing</Link></li>
+            <li><CartWidget/></li>
         </ul>
     )
 }

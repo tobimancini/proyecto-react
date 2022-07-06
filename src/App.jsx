@@ -3,6 +3,8 @@ import ItemCount from './Components/ItemCount';
 import Navbar from './Components/NavBar';
 import ItemDetailContainer from './Containers/ItemDetailContainer';
 import ItemListContainer from './Containers/ItemListContainer';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import NotFound from './Components/NotFound';
 
 function App() {
 
@@ -12,10 +14,17 @@ function App() {
 
   return (
     <div className='container'>
-       <Navbar/>
-       <ItemDetailContainer/>
-       {/* <ItemListContainer greeting="Welcome!"/>
-       <ItemCount handleAdd={handleAdd} initial={1} stock={5} /> */}
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer greeting="Welcome!"/>}></Route>
+          <Route path='/category/:categoryId' element={<ItemListContainer greeting="Welcome!"/>}></Route>
+          <Route path='/detail/:productId' element={<ItemDetailContainer/>}></Route>
+          <Route path='*' element={<NotFound/>}></Route>
+        </Routes>
+      </BrowserRouter>
+       
+       {/* <ItemCount handleAdd={handleAdd} initial={1} stock={5} /> */}
     </div>
   );
 }

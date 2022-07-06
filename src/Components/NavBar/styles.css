@@ -8,7 +8,7 @@
 
 ul{
     overflow: hidden;
-    background-color: black;
+    background-color: rgb(37, 37, 37);
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -20,19 +20,27 @@ ul{
 }
 
 li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
-    height: auto;
-    width: 100px;
+    height: 100%;
+    width: 120px;
     font-size: 16px;
-    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+li:hover{
+    background-color: black;
+}
+
 a{
     color: rgb(199, 207, 214);
     transition: all 100ms ease-in-out;
+    height: auto;
+    text-align: center;
 }
 
 a.active{

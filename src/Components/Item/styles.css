@@ -15,7 +15,7 @@
 }
 
 .item:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .itemTitle{
@@ -36,17 +36,19 @@
     font-size: 25px;
     font-weight: 600;
     color: rgb(35, 148, 69);
+    border-top: solid 1px rgb(35, 148, 69);
+    border-bottom:solid 1px rgb(35, 148, 69) ;
 }
 
 .itemDetails{
     align-self: flex-end;
     margin-right: 5px;
-    font-size: 16px;
+    font-size: 26px;
     font-style: italic;
     cursor: pointer;
-    transition: all 200ms ease-in-out;
+    transition: all 100ms ease-in-out;
 }
 
 .itemDetails:hover{
-    color: rgb(47, 47, 217);
+    color: rgb(97, 97, 241);
 }

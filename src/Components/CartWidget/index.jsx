@@ -4,7 +4,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 
 const CartWidget = () => {
     return (
-        <FiShoppingCart className="cart"/>
+        <div className="cartContainer"><FiShoppingCart className="cart"/></div>
     )
 }
 
