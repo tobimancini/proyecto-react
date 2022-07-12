@@ -13,3 +13,11 @@
     height: auto;
     margin: 15px;
 }
+
+.loading{
+    align-self: center;
+    margin: 40px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+}

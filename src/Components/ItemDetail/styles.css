@@ -3,12 +3,18 @@
     flex-direction: row;
     justify-content: flex-start;
     width: 100%;
-    height: auto;
+    height: 100%;
+}
+
+.imageContainer{
+    width: 30%;
+    margin-right: 100px;
+    height: 100%;
+    background-color: #fff;
 }
 
 .productImage{
-    width: 30%;
-    margin-right: 100px;
+    width: 100%;
 }
 
 .details{
@@ -42,4 +48,25 @@
     color: #fff;
     font-size: 50px;
     margin: 20px 0 0 0;
+}
+
+.buttonTerminate{
+    align-self: center;
+    height: auto;
+    width: 150px;
+    font-size: 15px;
+    padding: 5px;
+    margin: 30px;
+    background-color: #fff;
+    border-radius: 2px;
+    border: solid 1px #000;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 100ms ease-in-out;
+}
+
+.buttonTerminate:hover{
+    color: #fff;
+    background-color: rgb(24, 24, 24);
+    border: solid 1px #fff;
 }

@@ -27,7 +27,6 @@ const ItemDetailContainer = () => {
         Object.keys(productDetail).length !== 0 ?
         <ItemDetail product={productDetail}/> :
         <p>Loading...</p>
-        
     )
 }
 

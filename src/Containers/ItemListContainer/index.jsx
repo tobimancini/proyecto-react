@@ -3,7 +3,7 @@ import ItemList from "../../Components/ItemList";
 import './styles.css';
 import {useParams} from 'react-router-dom';
 
-const ItemListContainer = ({greeting}) =>{
+const ItemListContainer = () =>{
     
     const [productos, setProductos] = useState([]);
     const[productosFiltrados, setProductosFiltrados] = useState([])
@@ -42,11 +42,10 @@ const ItemListContainer = ({greeting}) =>{
     
     return (
         <div className="itemListContainer">
-            <p className="greeting">{greeting}</p>
             {
             productos.length !== 0 ?
             <ItemList products={productosFiltrados} /> :
-            <p>Loading...</p>
+            <p className="loading">Loading...</p>
             }
         </div>
     )

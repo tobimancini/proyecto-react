@@ -2,14 +2,15 @@
     margin-top: 30px;
     padding: 10px;
     display: flex;
+    align-self: center;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     height: auto;
-    width: 300px;
-    border: solid 1px rgb(161, 211, 255);
+    width: 150px;
+    border: solid 1px rgb(255, 255, 255);
     border-radius: 2px;
-    background-color: rgb(238, 235, 235);
+    background-color: rgb(24, 24, 24);
     margin: 20px;
 }
 
@@ -21,16 +22,9 @@
     height: auto;
 }
 
-.itemInfo{
-    font-size: 16px;
-    margin-left: 20px;
-    font-weight: 600;
-    color: #000;
-}
-
 .stock{
     font-size: 10px;
-    color: rgb(24, 24, 202);
+    color: rgb(74, 74, 223);
     font-weight: 600;
 }
 
@@ -42,21 +36,21 @@
     width: 100%;
     margin: 30px;
     padding: 0px 15px 0px 15px;
-    border: solid 1px rgb(0, 0, 0);
+    border: solid 1px rgb(255, 255, 255);
     border-radius: 2px;
 }
 
 .addDeduct{
     border: none;
-    background-color: rgb(238, 235, 235);
+    background-color: rgb(24, 24, 24);
     font-size: 30px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     transition: all 100ms ease-in-out;
 }
 
 .addDeduct:hover{
-    color: rgb(24, 24, 202);
+    color: rgb(74, 74, 223);
 }
 
 .addCart{
@@ -72,12 +66,13 @@
 }
 
 .addCart:hover{
-    border-color:rgb(24, 24, 202);
-    color: rgb(24, 24, 202);
+    color: #fff;
+    background-color: rgb(24, 24, 24);
+    border: solid 1px #fff;
 }
 
 .quantity{
     font-size: 16px;
     font-weight: 600;
-    color: rgb(0,0,0);
+    color: rgb(255, 255, 255);
 }
