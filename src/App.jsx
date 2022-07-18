@@ -5,10 +5,12 @@ import ItemListContainer from './Containers/ItemListContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import NotFound from './Components/NotFound';
 import Cart from './Containers/Cart';
+import ShopProvider from './Context/ShopContext';
 
 function App() {
 
   return (
+    <ShopProvider>
     <div className='container'>
       <BrowserRouter>
         <Navbar/>
@@ -21,6 +23,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </ShopProvider>
   );
 }
 
