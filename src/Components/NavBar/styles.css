@@ -33,14 +33,14 @@ li:hover{
     background-color: black;
 }
 
-a{
+.navItem{
     color: rgb(199, 207, 214);
     transition: all 100ms ease-in-out;
     height: auto;
     text-align: center;
 }
 
-a.active{
+.navItem.active{
     color: #fff;
 }
 

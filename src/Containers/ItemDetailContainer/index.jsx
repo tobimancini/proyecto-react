@@ -4,7 +4,14 @@ import ItemDetail from '../../Components/ItemDetail';
 import {useParams} from 'react-router-dom';
 
 const ItemDetailContainer = () => {
-  
+    
+    // app.use(function(res, next) {
+    //     res.header("Access-Control-Allow-Origin", "*");
+    //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    //     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");    
+    //     next();
+    //   });
+
     const [productDetail, setProductDetail] = useState({});
     const params = useParams();
 

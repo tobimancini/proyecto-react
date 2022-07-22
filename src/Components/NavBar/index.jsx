@@ -7,11 +7,11 @@ const Navbar = () => {
 
     return (
         <ul>
-            <li><Link className="active" to='/'>home</Link></li>
-            <li><Link to='/category/electronics'>electronics</Link></li>
-            <li><Link to='/category/jewelery'>jewelery</Link></li>
-            <li><Link to="/category/women's clothing">women's clothing</Link></li>
-            <li><Link to="/category/men's clothing">men's clothing</Link></li>
+            <li><Link className="navItem active" to='/'>home</Link></li>
+            <li><Link className="navItem" to='/category/electronics'>electronics</Link></li>
+            <li><Link className="navItem" to='/category/jewelery'>jewelery</Link></li>
+            <li><Link className="navItem" to="/category/women's clothing">women's clothing</Link></li>
+            <li><Link className="navItem" to="/category/men's clothing">men's clothing</Link></li>
             <li><CartWidget/></li>
         </ul>
     )

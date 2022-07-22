@@ -34,8 +34,18 @@ const ShopProvider = ({children}) => {
         setCart([]);
     }
 
+    const makePurchase = () =>{
+        setCart([]);
+        setTimeout(() => {
+            window.location.href = "/"
+        }, 1500);
+        
+    }
+
+    const totalPrice = cart.reduce((previousValue, currentValue) => previousValue + Number(currentValue.price*currentValue.quantity), 0 );
+
     return (
-        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll}}>
+        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase}}>
             {children}
         </Shop.Provider>
     )

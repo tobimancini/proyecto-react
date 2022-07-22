@@ -11,6 +11,7 @@
 }
 
 .cartItem{
+    position:relative;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -20,11 +21,18 @@
     border-bottom: solid 1px rgb(139, 139, 139);
 }
 
+/* .imageContainer{
+    height: 100%;
+    width: auto;
+    background-color: #fff;
+} */
+
 .cartImage{
     width: 300px;
 }
 
 .cartSubContainer{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -32,6 +40,7 @@
     height: 100%;
     width: 100%;
     padding: 10px;
+    padding-top: 30px;
 }
 
 .cartTitle{
@@ -43,4 +52,70 @@
 .noCart{
     color: #fff;
     margin-top: 30px;
+}
+
+.eraseItem{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background-color: rgb(168, 168, 168);
+    cursor: pointer;
+    color: black;
+    height: 25px;
+    width: 25px;
+    border-radius: 2px;
+    transition: all 100ms ease-in-out;
+}
+
+.eraseItem:hover{
+    background-color: #fff;
+}
+
+
+
+.backHome{
+    margin: 30px;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    color: black;
+    border-radius: 2px;
+    font-style: none;
+    border: solid 1px #fff;
+    transition: all 100ms ease-in-out;
+}
+
+.backHome:hover{
+    color: #fff;
+    background-color: black;
+}
+
+a{
+    color: black;
+}
+
+.backHome:hover a{
+    color: #fff;
+}
+
+.cartItem.total{
+    justify-content: end;
+    padding: 10px;
+}
+
+.finishContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.totalPrice{
+    color: #fff;
+    width: auto;
+    align-self: flex-end;
+    text-align: center;
+}
+
+.purchaseBtn{
+    padding: 5px;
+    margin: 15px;
 }
