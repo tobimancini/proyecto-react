@@ -12,7 +12,7 @@ const CartWidget = () => {
     return (
         <div className="widgetContainer"><Link to="/cart"><FiShoppingCart className="cart"/></Link>
             {cart.length>0?
-            <div className="cartQty">({cart.length})</div>:
+            <div className="cartQty">{cart.length}</div>:
             null}
         </div>
         

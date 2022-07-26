@@ -2,15 +2,10 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import ItemDetail from '../../Components/ItemDetail';
 import {useParams} from 'react-router-dom';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../../Firebase/config';
 
 const ItemDetailContainer = () => {
-    
-    // app.use(function(res, next) {
-    //     res.header("Access-Control-Allow-Origin", "*");
-    //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    //     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");    
-    //     next();
-    //   });
 
     const [productDetail, setProductDetail] = useState({});
     const params = useParams();
@@ -20,9 +15,23 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const getProductDetail = async () => {
             try {
-                const res = await fetch(`https://fakestoreapi.com/products/${params.productId}`);
-                const data = await res.json();
-                setProductDetail(data);
+
+                const docRef = doc(db, "products", params.productId);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    console.log(docSnap.id)
+                    console.log("Document data:", docSnap.data());
+                    const productDetail = {id: docSnap.id, ...docSnap.data()}
+                    setProductDetail(productDetail)
+                } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                }
+
+                // const res = await fetch(`https://fakestoreapi.com/products/${params.productId}`);
+                // const data = await res.json();
+                // setProductDetail(data);
             } catch (error) {
                 console.log(error);
             }

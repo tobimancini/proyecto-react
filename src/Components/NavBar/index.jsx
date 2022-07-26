@@ -7,7 +7,7 @@ const Navbar = () => {
 
     return (
         <ul>
-            <li><Link className="navItem active" to='/'>home</Link></li>
+            <li><Link className="navItem" to='/'>home</Link></li>
             <li><Link className="navItem" to='/category/electronics'>electronics</Link></li>
             <li><Link className="navItem" to='/category/jewelery'>jewelery</Link></li>
             <li><Link className="navItem" to="/category/women's clothing">women's clothing</Link></li>
