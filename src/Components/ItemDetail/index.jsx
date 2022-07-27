@@ -39,7 +39,7 @@ const ItemDetail = ({product}) => {
                 <p className='productDescription'>Description:<br/><br/>{product.description}</p>
                 <p className='productPrice'>$ {product.price}</p>
                 {!cartQty?
-                <ItemCount onConfirm={handleConfirm} initial={1} stock={10}/>:
+                <ItemCount onConfirm={handleConfirm} initial={1} stock={product.stock}/>:
                 <button className='buttonTerminate' onClick={handleTerminate}>Terminar Compra</button>
                 }
             </div>

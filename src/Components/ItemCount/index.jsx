@@ -11,16 +11,14 @@ const ItemCount = ({onConfirm, initial, stock}) => {
         onConfirm(count):
         console.log("Value > stock available");
     }
-    
-
-    let available = stock - count;
-
-
 
     return (
         <div className="itemCount">
             <div className="itemYStock">
-                <p className="stock">stock : {available}</p>
+                {   stock === 0 ?
+                <p className="noStock">no hay stock disponible</p>:    
+                <p className="hayStock">stock: {stock}</p>
+                }
             </div>
             <div className="quantityChange">
                 <button className="addDeduct" onClick={()=> setCount(count => count-1)} disabled={count === initial ? true : null}>-</button>

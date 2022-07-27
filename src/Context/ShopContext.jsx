@@ -8,6 +8,8 @@ const ShopProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
 
+    const[finalNumber, setFinalNumber] = useState(0);
+
     const addItem = (producto, cantidad) =>{
         // console.log(producto, cantidad);
         const productoRepetido = isInCart(producto)
@@ -38,14 +40,20 @@ const ShopProvider = ({children}) => {
         setCart([]);
         setTimeout(() => {
             window.location.href = "/"
-        }, 1500);
+        }, 2500);
         
+    }
+    const orderFinalPrice = (cart, priceEnd) =>{
+        cart.forEach(element => {
+            priceEnd += (element.price * element.quantity);
+            return(priceEnd)
+          });      
     }
 
     const totalPrice = cart.reduce((previousValue, currentValue) => previousValue + Number(currentValue.price*currentValue.quantity), 0 );
 
     return (
-        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase}}>
+        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice}}>
             {children}
         </Shop.Provider>
     )

@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react';
 import { Shop } from '../../Context/ShopContext';
 import './styles.css';
 import {Link} from 'react-router-dom';
+import ordenGenerada from '../../Utils/generarOrden';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../Firebase/config';
+import guardarOrden from '../../Utils/guardarOrden';
 
 const Cart = () => {
 
   const {cart, removeItem, clearAll, totalPrice, makePurchase} = useContext(Shop);
+
+  const confirmarOrden = async () => {
+    console.log(cart);
+    const orden = ordenGenerada("Tobias", "Calle inventada", "tobias_mancini@hotmail.com", cart, totalPrice);
+    guardarOrden(cart, orden);
+
+    // const docRef = await addDoc(collection(db, "orders"), orden);
+    // console.log("Document written with ID: ", docRef.id);
+    // makePurchase();
+  }
 
   return (
     cart.length > 0 ?
@@ -25,9 +39,9 @@ const Cart = () => {
    
       })}
       <li className='cartItem total'>
-        <div finishContainer>
+        <div className="finishContainer">
           <p className='totalPrice'>compra total: ${totalPrice} </p>
-          <button className='purchaseBtn' onClick={()=> makePurchase()}>TERMINAR MI COMPRA</button>
+          <button className='purchaseBtn' onClick={()=> confirmarOrden()}>TERMINAR MI COMPRA</button>
         </div>
       </li>
 

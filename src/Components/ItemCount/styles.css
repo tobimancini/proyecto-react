@@ -22,9 +22,15 @@
     height: auto;
 }
 
-.stock{
+.hayStock{
     font-size: 10px;
     color: rgb(74, 74, 223);
+    font-weight: 600;
+}
+
+.noStock{
+    font-size: 10px;
+    color: rgb(182, 46, 46);
     font-weight: 600;
 }
 
