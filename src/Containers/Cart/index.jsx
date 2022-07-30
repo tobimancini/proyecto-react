@@ -16,10 +16,6 @@ const Cart = () => {
     console.log(cart);
     const orden = ordenGenerada("Tobias", "Calle inventada", "tobias_mancini@hotmail.com", cart, totalPrice);
     guardarOrden(cart, orden);
-
-    // const docRef = await addDoc(collection(db, "orders"), orden);
-    // console.log("Document written with ID: ", docRef.id);
-    // makePurchase();
   }
 
   return (

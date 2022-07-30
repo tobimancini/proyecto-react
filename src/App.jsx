@@ -5,9 +5,13 @@ import ItemListContainer from './Containers/ItemListContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import NotFound from './Components/NotFound';
 import Cart from './Containers/Cart';
-import ShopProvider from './Context/ShopContext';
+import ShopProvider, { Shop } from './Context/ShopContext';
+import Modal from './Components/Modal';
+import { useContext } from 'react';
 
 function App() {
+
+  // const {modalOn} = useContext(Shop);
 
   return (
     <ShopProvider>

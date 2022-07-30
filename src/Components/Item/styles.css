@@ -9,7 +9,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 2px;
     border: solid 2px rgb(198, 198, 198);
     transition: all 100ms ease-in-out;
 }

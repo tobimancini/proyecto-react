@@ -10,10 +10,10 @@ const ShopProvider = ({children}) => {
 
     const[finalNumber, setFinalNumber] = useState(0);
 
+    const[modalOn, setModalOn] = useState(false);
+
     const addItem = (producto, cantidad) =>{
-        // console.log(producto, cantidad);
         const productoRepetido = isInCart(producto)
-        console.log(productoRepetido);
 
         if (productoRepetido) {
             productoRepetido.quantity += cantidad;
@@ -53,7 +53,7 @@ const ShopProvider = ({children}) => {
     const totalPrice = cart.reduce((previousValue, currentValue) => previousValue + Number(currentValue.price*currentValue.quantity), 0 );
 
     return (
-        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice}}>
+        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalOn, setModalOn}}>
             {children}
         </Shop.Provider>
     )
