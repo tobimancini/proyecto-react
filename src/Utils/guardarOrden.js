@@ -1,20 +1,18 @@
 
-import { addDoc, collection, doc, getDoc, writeBatch } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, getDocs, query, setDoc, updateDoc, where, writeBatch } from "firebase/firestore";
 import { db } from "../Firebase/config";
+import comprasRealizadas from "./comprasRealizadas";
 
 
-const guardarOrden = (cart, orden) => {
-    console.log("Guardar orden");
-    console.log(cart);
-    console.log(orden);
+const guardarOrden = async(cart, orden, userName, userPass, idUser, setNewPurchase) => {
     
     const batch = writeBatch(db)
     
     const outOfStock = []
     
     cart.forEach((productoEnCart) => {
-        getDoc(doc(db, 'products', productoEnCart.id))
-        .then(async (documentSnapshot) => {
+            getDoc(doc(db, 'products', productoEnCart.id))
+            .then(async (documentSnapshot) => {
 
             const producto = {...documentSnapshot.data(), id: documentSnapshot.id};
 
@@ -29,13 +27,22 @@ const guardarOrden = (cart, orden) => {
             console.log(outOfStock);
     
             if (outOfStock.length === 0) {
-                addDoc(collection(db, 'orders'), orden).then(({ id }) => {
-                    batch.commit().then(() => {
-                        alert("Se genero la order con id: " + id)
-                    })
-                }).catch((err) => {
-                    console.log(`Error: ${err.message}`);
-                })
+
+                //Obtengo el ID del User logueado.
+                const q = query(collection(db, "users"), where("nombre", "==", userName), where("contraseña", "==", userPass));
+
+                let userId = "";
+                const querySnapshot = await getDocs(q);
+                querySnapshot.forEach((doc) => {
+                    userId = doc.id;
+                    console.log(doc.id, " => ", doc.data());
+                });
+
+                //Le agrego al usuario la compra realizada.
+                await setDoc(doc(db, "users", userId), orden, { merge: true });
+
+                comprasRealizadas(idUser, setNewPurchase);
+
             } else {
                 let mensaje = ''
                 for (const producto of outOfStock) {

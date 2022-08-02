@@ -1,4 +1,8 @@
 import React, { createContext, useState } from 'react'
+import { useEffect } from 'react';
+import comprasRealizadas from '../Utils/comprasRealizadas';
+import ordenGenerada from '../Utils/generarOrden';
+import guardarOrden from '../Utils/guardarOrden';
 
 export const Shop = createContext();
 
@@ -8,9 +12,17 @@ const ShopProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
 
-    const[finalNumber, setFinalNumber] = useState(0);
-
     const[modalOn, setModalOn] = useState(false);
+
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
+    const [userId, setUserId] = useState("");
+
+    const [login, setLogin] = useState(false);
+
+    const[newPurchase, setNewPurchase] = useState(0);
+    const[orden, setOrden] = useState({});
+
 
     const addItem = (producto, cantidad) =>{
         const productoRepetido = isInCart(producto)
@@ -30,10 +42,12 @@ const ShopProvider = ({children}) => {
     const removeItem = (id) => {
         const productosFiltrados = cart.filter(producto => producto.id !== id)
         setCart(productosFiltrados);
+        comprasRealizadas(userId, setNewPurchase);
     }
 
     const clearAll = () =>{
         setCart([]);
+        comprasRealizadas(userId, setNewPurchase);
     }
 
     const makePurchase = () =>{
@@ -53,7 +67,7 @@ const ShopProvider = ({children}) => {
     const totalPrice = cart.reduce((previousValue, currentValue) => previousValue + Number(currentValue.price*currentValue.quantity), 0 );
 
     return (
-        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalOn, setModalOn}}>
+        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalOn, setModalOn, setUser,setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden}}>
             {children}
         </Shop.Provider>
     )

@@ -1,22 +1,26 @@
-import React, { useState } from 'react'
 import { useContext } from 'react';
 import { Shop } from '../../Context/ShopContext';
 import './styles.css';
 import {Link} from 'react-router-dom';
 import ordenGenerada from '../../Utils/generarOrden';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../../Firebase/config';
 import guardarOrden from '../../Utils/guardarOrden';
+import comprasRealizadas from '../../Utils/comprasRealizadas';
 
 const Cart = () => {
 
-  const {cart, removeItem, clearAll, totalPrice, makePurchase} = useContext(Shop);
+  const {cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, orden} = useContext(Shop);  
 
-  const confirmarOrden = async () => {
-    console.log(cart);
-    const orden = ordenGenerada("Tobias", "Calle inventada", "tobias_mancini@hotmail.com", cart, totalPrice);
-    guardarOrden(cart, orden);
+  const confirmarOrden = () =>{
+    comprasRealizadas(userId, setNewPurchase);
+    const orden = ordenGenerada(cart, totalPrice, newPurchase);
+    guardarOrden(cart, orden, user, password, userId, setNewPurchase);
   }
+
+  const chequeo=()=>{
+    comprasRealizadas(userId, setNewPurchase);
+  }
+
+  //tengo q hacer un array con las compras para ver cuantos elementos tiene con un for of, y obteniendo un valor por i, y ese valor lo uso para darle el numero de compra de forma dinamica.
 
   return (
     cart.length > 0 ?
@@ -49,6 +53,7 @@ const Cart = () => {
     <>
     <p className='noCart'>NO HAY ELEMENTOS EN EL CARRITO</p>
     <button className='backHome'><Link to='/'>VOLVER AL INICIO</Link></button>
+    <div className='backHome' onClick={chequeo}>CUANTAS COMPRAS HAY</div>
     </>
 
   )

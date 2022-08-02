@@ -4,14 +4,13 @@ import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import './styles.css';
 import { Shop } from '../../Context/ShopContext';
+import comprasRealizadas from '../../Utils/comprasRealizadas';
 
 const ItemDetail = ({product}) => {
     
+    const {userId, setNewPurchase} = useContext(Shop);
+
     const navigate = useNavigate();
-    
-    // const handleAdd = (count) => {
-    //     console.log(`Se agregaron ${count} items al carrito.`);
-    // }
 
     const[cartQty , setCartQty]= useState(0);
 
@@ -24,6 +23,8 @@ const ItemDetail = ({product}) => {
     const handleTerminate = () =>{
         addItem(product, cartQty);
         navigate('/cart');
+
+        // comprasRealizadas(userId, setNewPurchase); 
     }
     
 

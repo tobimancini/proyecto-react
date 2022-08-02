@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const UserWidget = () => {
     
-    const {setModalOn} = useContext(Shop);
+    const {setModalOn, user, password, login} = useContext(Shop);
     const [userActive, setUserActive] = useState(false)
 
     const onUserWidget = () =>{
@@ -24,9 +24,22 @@ const UserWidget = () => {
     }
     
     return (
+        login===true?
+        <div className="uWidgetContainer" onClick={openLoginModal}>
+            <BiUserCircle className="userWidget"/>
+            <div className="loginText">
+                <p>{user}</p> 
+            </div>
+        </div>
+        :
         userActive === false?
-        <div className="uWidgetContainer" onClick={openLoginModal} onMouseLeave={offUserWidget} onMouseEnter={onUserWidget}><BiUserCircle className="userWidget"/></div>:
-        <div className="uWidgetContainer" onClick={openLoginModal} onMouseLeave={offUserWidget} onMouseEnter={onUserWidget}><BiUserCircle className="userWidget"/><div className="loginText">log in</div></div>
+        <div className="uWidgetContainer" onClick={openLoginModal} onMouseLeave={offUserWidget} onMouseEnter={onUserWidget}><BiUserCircle className="userWidget"/></div>
+        :
+        <div className="uWidgetContainer" onClick={openLoginModal} onMouseLeave={offUserWidget} onMouseEnter={onUserWidget}><BiUserCircle className="userWidget"/>
+            <div className="loginText">
+                <p>log in<br/>or<br/>sign in</p>
+            </div>
+        </div>
     )
 }
 

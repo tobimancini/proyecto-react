@@ -15,12 +15,11 @@ const ItemListContainer = () =>{
     const [productos, setProductos] = useState([]);
     const[productosFiltrados, setProductosFiltrados] = useState([]);
 
-    const{modalOn} = useContext(Shop);
+    const{modalOn, user, password, login, userId, setNewPurchase} = useContext(Shop);
     
 
     const params = useParams();
 
-    console.log(params);
 
     useEffect(()=>{
         const getProductos = async() => {
@@ -65,7 +64,6 @@ const ItemListContainer = () =>{
         }
     },[params, productos]);
 
-    console.log(productos);
     
     return (
         <div className="itemListContainer">
