@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const UserWidget = () => {
     
-    const {setModalOn, user, password, login} = useContext(Shop);
+    const {setModalLogin, user, password, login} = useContext(Shop);
     const [userActive, setUserActive] = useState(false)
 
     const onUserWidget = () =>{
@@ -20,7 +20,7 @@ const UserWidget = () => {
     }
 
     const openLoginModal = () => {
-        setModalOn(true);
+        setModalLogin(true);
     }
     
     return (

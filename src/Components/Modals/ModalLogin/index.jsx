@@ -1,15 +1,12 @@
-import { async } from '@firebase/util';
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import { useContext } from 'react';
-import { Shop } from '../../Context/ShopContext';
-import nuevoUsuario from '../../UserData/crearUsuario';
-import loginUsuario from '../../UserData/login';
+import React, { useContext, useEffect, useState } from 'react';
+import { Shop } from '../../../Context/ShopContext';
+import nuevoUsuario from '../../../UserData/crearUsuario';
+import loginUsuario from '../../../UserData/login';
 import './styles.css';
 
-const Modal = () => {
+const ModalLogin = () => {
 
-    const {setModalOn, setLogin, setUser, setPassword, user, password, login, setUserId, userId, setNewPurchase} = useContext(Shop);
+    const {setModalLogin, setLogin, setUser, setPassword, user, password, login, setUserId, userId, setNewPurchase} = useContext(Shop);
     const[logOrSign, setLogOrSign] = useState("login")
     
 
@@ -17,7 +14,7 @@ const Modal = () => {
 
         const handleEsc = (evt) => {
             if (evt.keyCode === 27) {
-                setModalOn(false);
+                setModalLogin(false);
             }
         };
 
@@ -42,7 +39,7 @@ const Modal = () => {
         const dir = document.getElementById('dir').value;
 
         nuevoUsuario(name, pass, mail, dir);
-        setModalOn(false);
+        setModalLogin(false);
     }
 
     const logIn = async() =>{
@@ -50,7 +47,7 @@ const Modal = () => {
         const pass = document.getElementById('userPass').value;
 
         loginUsuario(name, pass, setLogin, setPassword, setUser, setUserId);
-        setModalOn(false);
+        setModalLogin(false);
     } 
 
     useEffect(()=>{
@@ -63,9 +60,7 @@ const Modal = () => {
     }, [user])
 
     return (
-        <div className='modalBG'>
-            <div className='modal'>
-                <div className="form">
+        <>
                     <form className={logOrSign==="login"?"register-form off":"register-form"}>
                         <p>please complete the following for registration</p>
                         <input id='name' type="text" placeholder="name"/>
@@ -82,12 +77,8 @@ const Modal = () => {
                         <div onClick={logIn}>login</div>
                         <p className="message">not registered? <a href="#" onClick={change}>create an account</a></p>
                     </form>
-                </div>
-
-                <button className='closeModal' onClick={()=>setModalOn(false)}>X</button>
-            </div>
-        </div>
+        </>
     )
 }
 
-export default Modal
+export default ModalLogin

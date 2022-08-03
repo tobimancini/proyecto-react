@@ -4,7 +4,12 @@ import './styles.css';
 import {Link} from 'react-router-dom';
 import UserWidget from "../UserWidget";
 
+import { useContext } from "react";
+import { Shop } from "../../Context/ShopContext";
+
 const Navbar = () => {
+
+    const {modalOn} = useContext(Shop);
 
     return (
         <div className="navContainer">
@@ -17,6 +22,7 @@ const Navbar = () => {
                 <li className="navItemContainer cartWidget"><CartWidget/></li>
             </ul>
             <div className="navItemContainer"><UserWidget/></div>
+            
         </div>
     )
 }

@@ -1,8 +1,6 @@
 import React, { createContext, useState } from 'react'
-import { useEffect } from 'react';
+import Modal from '../Components/Modals/modal';
 import comprasRealizadas from '../Utils/comprasRealizadas';
-import ordenGenerada from '../Utils/generarOrden';
-import guardarOrden from '../Utils/guardarOrden';
 
 export const Shop = createContext();
 
@@ -12,7 +10,8 @@ const ShopProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
 
-    const[modalOn, setModalOn] = useState(false);
+    const[modalLogin, setModalLogin] = useState(false);
+    const[modalCompra, setModalCompra] = useState(false);
 
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
@@ -51,12 +50,10 @@ const ShopProvider = ({children}) => {
     }
 
     const makePurchase = () =>{
-        setCart([]);
-        setTimeout(() => {
             window.location.href = "/"
-        }, 2500);
-        
+            setCart([]);
     }
+
     const orderFinalPrice = (cart, priceEnd) =>{
         cart.forEach(element => {
             priceEnd += (element.price * element.quantity);
@@ -67,7 +64,12 @@ const ShopProvider = ({children}) => {
     const totalPrice = cart.reduce((previousValue, currentValue) => previousValue + Number(currentValue.price*currentValue.quantity), 0 );
 
     return (
-        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalOn, setModalOn, setUser,setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden}}>
+        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalLogin, setModalLogin,modalCompra, setModalCompra, setUser,setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden}}>
+            {
+                modalLogin===true || modalCompra===true?
+                <Modal/>:
+                null
+            }
             {children}
         </Shop.Provider>
     )

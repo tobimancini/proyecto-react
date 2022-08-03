@@ -5,17 +5,12 @@ import {useParams} from 'react-router-dom';
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from '../../Firebase/config';
 import algoritmoGuardadoAutomático from "../../Utils/guardarProductos";
-import Modal from "../../Components/Modal";
-import { useContext } from "react";
-import { Shop } from "../../Context/ShopContext";
 
 
 const ItemListContainer = () =>{
     
     const [productos, setProductos] = useState([]);
     const[productosFiltrados, setProductosFiltrados] = useState([]);
-
-    const{modalOn, user, password, login, userId, setNewPurchase} = useContext(Shop);
     
 
     const params = useParams();
@@ -67,11 +62,6 @@ const ItemListContainer = () =>{
     
     return (
         <div className="itemListContainer">
-            {
-                modalOn===true ?
-                <Modal/>:
-                null
-            }
             {
             productos.length !== 0 ?
             <ItemList products={productosFiltrados} /> :

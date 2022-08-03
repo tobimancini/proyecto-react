@@ -8,19 +8,17 @@ import comprasRealizadas from '../../Utils/comprasRealizadas';
 
 const Cart = () => {
 
-  const {cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, orden} = useContext(Shop);  
+  const {cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, setModalCompra, login} = useContext(Shop);  
 
   const confirmarOrden = () =>{
     comprasRealizadas(userId, setNewPurchase);
     const orden = ordenGenerada(cart, totalPrice, newPurchase);
     guardarOrden(cart, orden, user, password, userId, setNewPurchase);
+    
+    login === true?
+    setTimeout(setModalCompra(true), 1500):
+    console.log("inicie sesión para realizar una compra");
   }
-
-  const chequeo=()=>{
-    comprasRealizadas(userId, setNewPurchase);
-  }
-
-  //tengo q hacer un array con las compras para ver cuantos elementos tiene con un for of, y obteniendo un valor por i, y ese valor lo uso para darle el numero de compra de forma dinamica.
 
   return (
     cart.length > 0 ?
@@ -53,7 +51,6 @@ const Cart = () => {
     <>
     <p className='noCart'>NO HAY ELEMENTOS EN EL CARRITO</p>
     <button className='backHome'><Link to='/'>VOLVER AL INICIO</Link></button>
-    <div className='backHome' onClick={chequeo}>CUANTAS COMPRAS HAY</div>
     </>
 
   )
