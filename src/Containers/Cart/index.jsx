@@ -5,19 +5,25 @@ import {Link} from 'react-router-dom';
 import ordenGenerada from '../../Utils/generarOrden';
 import guardarOrden from '../../Utils/guardarOrden';
 import comprasRealizadas from '../../Utils/comprasRealizadas';
+import stockUpdate from '../../StockUpdate';
+
+
 
 const Cart = () => {
 
-  const {cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, setModalCompra, login} = useContext(Shop);  
+  const {cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, setModalCompra, modalCompra, login, setCart} = useContext(Shop);  
 
-  const confirmarOrden = () =>{
+  const confirmarOrden = async() =>{
     comprasRealizadas(userId, setNewPurchase);
     const orden = ordenGenerada(cart, totalPrice, newPurchase);
-    guardarOrden(cart, orden, user, password, userId, setNewPurchase);
+    guardarOrden(cart, orden, user, password, userId, setNewPurchase, setCart);
     
     login === true?
-    setTimeout(setModalCompra(true), 1500):
+    setModalCompra(true):
     console.log("inicie sesión para realizar una compra");
+    
+    stockUpdate(cart);
+    console.log(cart);
   }
 
   return (

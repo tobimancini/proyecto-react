@@ -64,7 +64,7 @@ const ShopProvider = ({children}) => {
     const totalPrice = cart.reduce((previousValue, currentValue) => previousValue + Number(currentValue.price*currentValue.quantity), 0 );
 
     return (
-        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalLogin, setModalLogin,modalCompra, setModalCompra, setUser,setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden}}>
+        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart, setCart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalLogin, setModalLogin, modalCompra, setModalCompra, setUser,setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden}}>
             {
                 modalLogin===true || modalCompra===true?
                 <Modal/>:

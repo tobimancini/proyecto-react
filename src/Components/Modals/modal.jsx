@@ -7,11 +7,13 @@ import './styles.css';
 
 const Modal = () => {
 
-    const {setModalLogin, setModalCompra, modalLogin, modalCompra} = useContext(Shop);
+    const {setModalLogin, setModalCompra, modalLogin, modalCompra, clearAll, cart} = useContext(Shop);
 
     const closeModal = () =>{
         setModalCompra(false);
         setModalLogin(false);
+
+        clearAll();
     }
     
     return (

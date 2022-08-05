@@ -15,10 +15,13 @@ const ModalCompra = () => {
     return (
         <div>
         {items.map(el => {
-            return  <div>
-                        <p>{el.title}</p>
-                        <p>{el.price}</p>
-                        <p>{el.quantity}</p>
+            return  <div key={el.id}>
+                        <p>producto: {el.title}</p>
+                        <p>precio unitario: ${el.price}</p>
+                        <div className='orderImgBox'>
+                            <img className='orderImg' src={el.image} alt="" />
+                        </div>
+                        <p>cantidad: {el.quantity}</p>
                     </div>
         })}
         <div>total: ${purchase[`${newPurchase}`].total} </div>

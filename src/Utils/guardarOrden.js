@@ -1,5 +1,5 @@
 
-import { addDoc, collection, doc, getDoc, getDocs, query, setDoc, updateDoc, where, writeBatch } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, getDocs, query, setDoc, where, writeBatch } from "firebase/firestore";
 import { db } from "../Firebase/config";
 import comprasRealizadas from "./comprasRealizadas";
 
@@ -35,13 +35,13 @@ const guardarOrden = async(cart, orden, userName, userPass, idUser, setNewPurcha
                 const querySnapshot = await getDocs(q);
                 querySnapshot.forEach((doc) => {
                     userId = doc.id;
-                    console.log(doc.id, " => ", doc.data());
                 });
 
                 //Le agrego al usuario la compra realizada.
                 await setDoc(doc(db, "users", userId), orden, { merge: true });
 
                 comprasRealizadas(idUser, setNewPurchase);
+                // stockControl(userId, cart);
 
             } else {
                 let mensaje = ''
@@ -52,6 +52,7 @@ const guardarOrden = async(cart, orden, userName, userPass, idUser, setNewPurcha
             }
         })
     })
+
 }
 
 export default guardarOrden;
