@@ -11,19 +11,12 @@ import stockUpdate from '../../StockUpdate';
 
 const Cart = () => {
 
-  const {cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, setModalCompra, modalCompra, login, setCart} = useContext(Shop);  
+  const {cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, setModalCompra, setCart} = useContext(Shop);  
 
   const confirmarOrden = async() =>{
     comprasRealizadas(userId, setNewPurchase);
     const orden = ordenGenerada(cart, totalPrice, newPurchase);
-    guardarOrden(cart, orden, user, password, userId, setNewPurchase, setCart);
-    
-    login === true?
-    setModalCompra(true):
-    console.log("inicie sesión para realizar una compra");
-    
-    stockUpdate(cart);
-    console.log(cart);
+    guardarOrden(cart, orden, user, password, userId, setNewPurchase, setModalCompra);    
   }
 
   return (

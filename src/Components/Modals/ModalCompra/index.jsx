@@ -11,7 +11,8 @@ const ModalCompra = () => {
     const purchase = order.compras;
     const items = purchase[`${newPurchase}`].items
 
-
+    
+    
     return (
         <div>
         {items.map(el => {

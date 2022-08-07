@@ -21,7 +21,6 @@ const loginUsuario = async(name, pass, functLogin, functPassword, functUser, fun
     }else{
         console.log("no existe el usuario");
     }
-
 }
 
 export default loginUsuario;

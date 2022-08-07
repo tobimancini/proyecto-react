@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CartWidget from "../CartWidget";
 import './styles.css';
 import {Link} from 'react-router-dom';

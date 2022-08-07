@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const UserWidget = () => {
     
-    const {setModalLogin, user, password, login} = useContext(Shop);
+    const {setModalLogin, user, login} = useContext(Shop);
     const [userActive, setUserActive] = useState(false)
 
     const onUserWidget = () =>{
@@ -35,7 +35,7 @@ const UserWidget = () => {
         userActive === false?
         <div className="uWidgetContainer" onClick={openLoginModal} onMouseLeave={offUserWidget} onMouseEnter={onUserWidget}><BiUserCircle className="userWidget"/></div>
         :
-        <div className="uWidgetContainer" onClick={openLoginModal} onMouseLeave={offUserWidget} onMouseEnter={onUserWidget}><BiUserCircle className="userWidget"/>
+        <div className="uWidgetContainer logOrSign" onClick={openLoginModal} onMouseLeave={offUserWidget} onMouseEnter={onUserWidget}><BiUserCircle className="userWidget"/>
             <div className="loginText">
                 <p>log in<br/>or<br/>sign in</p>
             </div>

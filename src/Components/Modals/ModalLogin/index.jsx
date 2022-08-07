@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Shop } from '../../../Context/ShopContext';
+import guardarDatos from '../../../Storage/localStorage';
 import nuevoUsuario from '../../../UserData/crearUsuario';
 import loginUsuario from '../../../UserData/login';
 import './styles.css';
@@ -48,6 +49,7 @@ const ModalLogin = () => {
 
         loginUsuario(name, pass, setLogin, setPassword, setUser, setUserId);
         setModalLogin(false);
+        guardarDatos(name, pass);  
     } 
 
     useEffect(()=>{

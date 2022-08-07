@@ -1,4 +1,4 @@
-import { collection, query, onSnapshot, where, getDocs, updateDoc, doc, getDoc } from "firebase/firestore";
+import { updateDoc, doc, getDoc } from "firebase/firestore";
 import { db } from '../Firebase/config';
 
 const stockUpdate = async (cart) => {
