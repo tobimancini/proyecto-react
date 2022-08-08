@@ -6,60 +6,140 @@
     list-style: none;
 }
 
-.navContainer{
-    overflow: hidden;
+header {
+    height: 70px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: #212529;
     background-color: rgb(37, 37, 37);
-    display: flex;
-    flex-direction: row;
     width: 100%;
-    height: 80px;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: solid 2px rgb(198, 198, 198);
-}
+    overflow: visible;
+    border-bottom: solid 1px rgb(189, 184, 184);
+  }
 
-.navBar{
+  nav{
     height: 100%;
+  }
+  
+  .nav-area {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: auto;
-}
-
-.navItemContainer{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .menus {
     display: flex;
-    justify-content: center;
-    align-items: center;
     list-style: none;
     height: 100%;
-    width: 140px;
-    padding: 20px;
-    font-size: 16px;
+  }
+  
+  .menu-items {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
     transition: all 100ms ease-in-out;
-}
-
-.navItemContainer:hover{
-    background-color: black;
-}
-
-.navItem{
-    color: rgb(199, 207, 214);
-    transition: all 100ms ease-in-out;
-    height: auto;
+    height: 100%;
+  }
+  
+  .menu-items a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100px;
     text-align: center;
-}
+    font-size: inherit;
+    text-decoration: none;
+    color: rgb(189, 184, 184);
+    font-weight: 600;
+  }
 
-.navItem.active{
+  .menu-items a:hover .cartQty{
+    background-color: #000;
     color: #fff;
-}
+  }
+  
+  .menu-items button {
+    position: relative;
+    align-self: flex-end;
+    color: rgb(189, 184, 184);
+    font-size: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-width: 80px;
+    text-align: center;
+  }
+  
+  .menu-items a,
+  .menu-items button {
+    text-align: left;
+    padding: 0.7rem 1rem;
+  }
+  
+  .menu-items a:hover,
+  .menu-items button:hover{
+    background-color: #f2f2f2;
+    color: #212529;
+  }
+  
+  .arrow::after {
+    content: "";
+    display: inline-block;
+    margin-left: 0.28em;
+    vertical-align: 0.09em;
+    border-top: 0.42em solid;
+    border-right: 0.32em solid transparent;
+    border-left: 0.32em solid transparent;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 101%;
+    right: 0;
+    left: auto;
+    box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08), 0 4px 6px -2px rgba(71, 63, 79, 0.16);
+    font-size: 14px;
+    z-index: 9999;
+    min-width: 10rem;
+    list-style: none;
+    background-color: rgb(37, 37, 37);
+    border-radius: 0px;
+    border: solid 1px #fff;
+    border-top: none;
+    display: none;
 
-.navItem:hover{
-    color: #fff;
-}
+  }
+  
+  .dropdown.show {
+    display: block;
+  }
 
-.count{
-    color: rgb(199, 207, 214);
-    font-size: 12px;
-    transition: all 100ms ease-in-out;
-}
+  .dropdown .menu-items a{
+    width: 100%;
+  }
+
+  .userContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .loginText{
+    text-align: center;
+    min-width: 50px;
+    color: rgb(189, 184, 184);
+    font-weight: 600;
+    padding-left: 15px;
+  }

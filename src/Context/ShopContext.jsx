@@ -1,8 +1,10 @@
 import { where } from 'firebase/firestore';
 import React, { createContext, useEffect, useState } from 'react'
+import App from '../App';
 import Modal from '../Components/Modals/modal';
+import { loginOrSignin } from '../Components/NavBar/NavItems/logOrSign';
+import { profileData } from '../Components/NavBar/NavItems/profileData';
 import guardarDatos from '../Storage/localStorage';
-import obtenerDatos from '../Storage/obtenerDatos';
 import loginUsuario from '../UserData/login';
 import comprasRealizadas from '../Utils/comprasRealizadas';
 
@@ -79,13 +81,27 @@ const ShopProvider = ({ children }) => {
 
             loginUsuario(userStored, passStored, setLogin, setPassword, setUser, setUserId);
             guardarDatos(userStored, passStored);
+            setLogin(true);
 
         }
     }, [])
 
+    const[logOrSign, setLogOrSign] = useState("login")
+
+    const [logged, setLogged] = useState(loginOrSignin);
+
+    useEffect(() => {
+      login === true?
+      setLogged(profileData)
+      :
+      setLogged(loginOrSignin)
+    }, [login])
+    
+
 
     return (
-        <Shop.Provider value={{ userStored, passStored, addItem, cart, setCart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalLogin, setModalLogin, modalCompra, setModalCompra, setUser, setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden }}>
+        <Shop.Provider value={{ userStored, passStored, addItem, cart, setCart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalLogin, setModalLogin,
+         modalCompra, setModalCompra, setUser, setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden, logged, setLogged, logOrSign, setLogOrSign }}>
             {
                 modalLogin === true || modalCompra === true ?
                     <Modal /> :

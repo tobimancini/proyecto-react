@@ -1,23 +1,25 @@
-.item{
-    height: 300px;
-    width: 340px;
+.item {
+    position: relative;
+    height: 270px;
+    width: 270px;
     background-color: #fff;
     color: #000;
     margin: 10px;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     border: solid 2px rgb(198, 198, 198);
+    overflow: hidden;
     transition: all 100ms ease-in-out;
 }
 
-.item:hover{
-    transform: scale(1.02);
+.item:hover .itemImage, .item:hover .itemPrice{
+    transform: scale(1.1);
 }
 
-.itemTitle{
+.itemTitle {
     font-size: 12px;
     padding: 5px;
     width: 100%;
@@ -26,28 +28,41 @@
     margin-bottom: 5px;
 }
 
-.itemImage{
-    height: 150px;
+.itemImage {
+    height: 130px;
     margin: 5px;
+    transition: all 100ms ease-in-out;
 }
 
-.itemPrice{
-    font-size: 25px;
+.itemPrice {
+    align-self: flex-start;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    height: auto;
+    min-width: 60px;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
     font-weight: 600;
-    color: rgb(35, 148, 69);
-    border-top: solid 1px rgb(35, 148, 69);
-    border-bottom:solid 1px rgb(35, 148, 69) ;
+    background-color: rgb(35, 148, 69);
+    color: #fff;
+    border-radius: 2px;
+    border: solid 1px rgb(13, 222, 90);
+    transition: all 100ms ease-in-out;
 }
 
-.itemDetails{
-    align-self: flex-end;
+.itemDetails {
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
     margin-right: 5px;
-    font-size: 26px;
+    font-size: 22px;
     font-style: italic;
     cursor: pointer;
     transition: all 100ms ease-in-out;
 }
 
-.itemDetails:hover{
+.itemDetails:hover {
     color: rgb(97, 97, 241);
 }

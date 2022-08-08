@@ -7,8 +7,7 @@ import './styles.css';
 
 const ModalLogin = () => {
 
-    const {setModalLogin, setLogin, setUser, setPassword, user, password, login, setUserId, userId, setNewPurchase} = useContext(Shop);
-    const[logOrSign, setLogOrSign] = useState("login")
+    const {setModalLogin, setLogin, setUser, setPassword, user, password, login, setUserId, userId, setNewPurchase, logOrSign, setLogOrSign} = useContext(Shop);
     
 
     useEffect(() => {

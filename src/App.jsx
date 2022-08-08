@@ -1,11 +1,12 @@
 import './App.css';
-import Navbar from './Components/NavBar';
+
 import ItemDetailContainer from './Containers/ItemDetailContainer';
 import ItemListContainer from './Containers/ItemListContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import NotFound from './Components/NotFound';
 import Cart from './Containers/Cart';
 import ShopProvider, { Shop } from './Context/ShopContext';
+import Navbar from './Components/NavBar';
 
 function App() {
 

@@ -1,29 +1,55 @@
 import React, { useState } from "react";
-import CartWidget from "../CartWidget";
 import './styles.css';
-import {Link} from 'react-router-dom';
-import UserWidget from "../UserWidget";
+import { Link } from 'react-router-dom';
+
 
 import { useContext } from "react";
 import { Shop } from "../../Context/ShopContext";
+import CartWidget from "./CartWidget";
+import { menuItems } from "./NavItems";
+import UserWidget from "./UserWidget";
 
 const Navbar = () => {
 
-    const {modalOn} = useContext(Shop);
+    const { login, user } = useContext(Shop);
 
     return (
-        <div className="navContainer">
-            <ul className="navBar">
-                <li className="navItemContainer"><Link className="navItem" to='/'>home</Link></li>
-                <li className="navItemContainer"><Link className="navItem" to='/category/electronics'>electronics</Link></li>
-                <li className="navItemContainer"><Link className="navItem" to='/category/jewelery'>jewelery</Link></li>
-                <li className="navItemContainer"><Link className="navItem" to="/category/women's clothing">women's clothing</Link></li>
-                <li className="navItemContainer"><Link className="navItem" to="/category/men's clothing">men's clothing</Link></li>
-                <li className="navItemContainer cartWidget"><CartWidget/></li>
-            </ul>
-            <div className="navItemContainer"><UserWidget/></div>
-            
-        </div>
+
+        <header>
+            <div className="nav-area">
+                <nav>
+
+                    <ul className="menus">
+                        {menuItems.map((menu, index) => {
+                            return (
+                                <li className="menu-items" key={index}>
+                                    <Link to={menu.title === "home" ? '/' : `/category/${menu.title}`}>{menu.title}</Link>
+                                </li>
+                            );
+                        })}
+                        <li className="menu-items">
+                            <CartWidget />
+                        </li>
+                    </ul>
+
+
+                </nav>
+                <div className="userContainer">
+                    <div className="menu-items">
+                        <UserWidget />
+                    </div>
+                    {
+                        login === true ?
+                            <div className="loginText">
+                                <p>{user}</p>
+                            </div>
+                            :
+                            null
+                    }
+                </div>
+            </div>
+        </header>
+
     )
 }
 
