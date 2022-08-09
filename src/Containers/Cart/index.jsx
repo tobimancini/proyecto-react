@@ -11,12 +11,12 @@ import stockUpdate from '../../StockUpdate';
 
 const Cart = () => {
 
-  const {cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, setModalCompra, setCart} = useContext(Shop);  
+  const {cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, setModalCompra, modalPurch, setGetPurch} = useContext(Shop);  
 
   const confirmarOrden = async() =>{
-    comprasRealizadas(userId, setNewPurchase);
+    comprasRealizadas(userId, setNewPurchase, modalPurch, setGetPurch);
     const orden = ordenGenerada(cart, totalPrice, newPurchase);
-    guardarOrden(cart, orden, user, password, userId, setNewPurchase, setModalCompra);    
+    guardarOrden(cart, orden, user, password, userId, setNewPurchase, setModalCompra, modalPurch, setGetPurch);    
   }
 
   return (

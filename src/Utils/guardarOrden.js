@@ -6,7 +6,7 @@ import obtenerDatos from "../Storage/obtenerDatos";
 import comprasRealizadas from "./comprasRealizadas";
 
 
-const guardarOrden = async (cart, orden, userName, userPass, idUser, setNewPurchase, modal) => {
+const guardarOrden = async (cart, orden, userName, userPass, idUser, setNewPurchase, modal, modalPurch, setGetPurch) => {
 
     const batch = writeBatch(db)
 
@@ -42,7 +42,7 @@ const guardarOrden = async (cart, orden, userName, userPass, idUser, setNewPurch
                     //Le agrego al usuario la compra realizada.
                     await setDoc(doc(db, "users", userId), orden, { merge: true });
 
-                    comprasRealizadas(idUser, setNewPurchase);
+                    comprasRealizadas(idUser, setNewPurchase, modalPurch, setGetPurch);
                     // stockControl(userId, cart);
 
                 } else {

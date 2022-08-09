@@ -18,6 +18,9 @@ const ShopProvider = ({ children }) => {
 
     const [modalLogin, setModalLogin] = useState(false);
     const [modalCompra, setModalCompra] = useState(false);
+    const [modalPurch, setModalPurch] = useState(false);
+
+    const [getPurch, setGetPurch] = useState([])
 
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
@@ -47,12 +50,12 @@ const ShopProvider = ({ children }) => {
     const removeItem = (id) => {
         const productosFiltrados = cart.filter(producto => producto.id !== id)
         setCart(productosFiltrados);
-        comprasRealizadas(userId, setNewPurchase);
+        comprasRealizadas(userId, setNewPurchase, modalPurch, setGetPurch);
     }
 
     const clearAll = () => {
         setCart([]);
-        comprasRealizadas(userId, setNewPurchase);
+        comprasRealizadas(userId, setNewPurchase, modalPurch, setGetPurch);
     }
 
     const makePurchase = () => {
@@ -86,24 +89,27 @@ const ShopProvider = ({ children }) => {
         }
     }, [])
 
-    const[logOrSign, setLogOrSign] = useState("login")
+    const [logOrSign, setLogOrSign] = useState("login")
 
     const [logged, setLogged] = useState(loginOrSignin);
 
     useEffect(() => {
-      login === true?
-      setLogged(profileData)
-      :
-      setLogged(loginOrSignin)
+        login === true ?
+            setLogged(profileData)
+            :
+            setLogged(loginOrSignin)
     }, [login])
-    
+
 
 
     return (
-        <Shop.Provider value={{ userStored, passStored, addItem, cart, setCart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalLogin, setModalLogin,
-         modalCompra, setModalCompra, setUser, setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden, logged, setLogged, logOrSign, setLogOrSign }}>
+        <Shop.Provider value={{
+            userStored, passStored, addItem, cart, setCart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalLogin, setModalLogin,
+            modalCompra, setModalCompra, setUser, setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden, logged, setLogged, logOrSign,
+            setLogOrSign, modalPurch, setModalPurch, getPurch, setGetPurch
+        }}>
             {
-                modalLogin === true || modalCompra === true ?
+                modalLogin === true || modalCompra === true || modalPurch === true?
                     <Modal /> :
                     null
             }

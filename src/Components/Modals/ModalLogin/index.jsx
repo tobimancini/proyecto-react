@@ -3,7 +3,6 @@ import { Shop } from '../../../Context/ShopContext';
 import guardarDatos from '../../../Storage/localStorage';
 import nuevoUsuario from '../../../UserData/crearUsuario';
 import loginUsuario from '../../../UserData/login';
-import './styles.css';
 
 const ModalLogin = () => {
 
@@ -63,19 +62,19 @@ const ModalLogin = () => {
     return (
         <>
                     <form className={logOrSign==="login"?"register-form off":"register-form"}>
-                        <p>please complete the following for registration</p>
-                        <input id='name' type="text" placeholder="name"/>
-                        <input id='pass' type="password" placeholder="password"/>
-                        <input id='mail' type="text" placeholder="email address"/>
-                        <input id='dir' type="text" placeholder="dirección"/>
-                        <div onClick={createUser}>create</div>
+                        <p className='loginTitle'>please complete the following for registration</p>
+                        <input className='loginInput' id='name' type="text" placeholder="name"/>
+                        <input className='loginInput' id='pass' type="password" placeholder="password"/>
+                        <input className='loginInput' id='mail' type="text" placeholder="email address"/>
+                        <input className='loginInput' id='dir' type="text" placeholder="dirección"/>
+                        <div className='loginBtn' onClick={createUser}>create</div>
                         <p className="message">already registered? <a href="#" onClick={change}>sign in</a></p>
                     </form>
                     <form className={logOrSign==="sign"?"login-form off":"login-form"}>
-                        <p>please complete the following to log in</p>
-                        <input id="userName" type="text" placeholder="username"/>
-                        <input id='userPass' type="password" placeholder="password"/>
-                        <div onClick={logIn}>login</div>
+                        <p className='loginTitle'>please complete the following to log in</p>
+                        <input className='loginInput' id="userName" type="text" placeholder="username"/>
+                        <input className='loginInput' id='userPass' type="password" placeholder="password"/>
+                        <div className='loginBtn' onClick={logIn}>login</div>
                         <p className="message">not registered? <a href="#" onClick={change}>create an account</a></p>
                     </form>
         </>

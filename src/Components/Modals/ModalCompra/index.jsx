@@ -14,7 +14,7 @@ const ModalCompra = () => {
     
     
     return (
-        <div>
+        <div className='orderContainer'>
         {items.map(el => {
             return  <div key={el.id}>
                         <p>producto: {el.title}</p>

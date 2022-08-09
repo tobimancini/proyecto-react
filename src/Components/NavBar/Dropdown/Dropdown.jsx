@@ -1,18 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Shop } from '../../../Context/ShopContext';
 
 const Dropdown = ({ items ,dropdown, setDropdown }) => {
 
-    const { setModalLogin, login, setLogin, setLogOrSign } = useContext(Shop);
-
-    // const onUserWidget = () => {
-    //     setUserActive(true)
-    // }
-
-    // const offUserWidget = () => {
-    //     setUserActive(false)
-    // }
+    const { setModalLogin, login, setLogin, setLogOrSign, setModalPurch } = useContext(Shop);
 
     const openLoginModal = (item) => {
         setModalLogin(true);
@@ -29,6 +21,11 @@ const Dropdown = ({ items ,dropdown, setDropdown }) => {
         setDropdown(false)
     }
 
+    const openModalPurchases = () => {
+        setModalPurch(true);
+        setDropdown(false);
+    }
+
    
 
     return (
@@ -36,7 +33,7 @@ const Dropdown = ({ items ,dropdown, setDropdown }) => {
             {items.map((item, index) => (
 
                 login === true ?
-                    <li key={index} className="menu-items" onClick={item.title === "log out" ? () => logOut() : ()=>setDropdown(false)} >
+                    <li key={index} className="menu-items" onClick={item.title === "log out" ? () => logOut() : ()=>openModalPurchases()} >
                         <Link to="/">{item.title}</Link>
                     </li>
                     :
