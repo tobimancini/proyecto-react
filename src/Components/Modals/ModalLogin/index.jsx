@@ -51,11 +51,6 @@ const ModalLogin = () => {
     } 
 
     useEffect(()=>{
-        console.log("user:"+user);
-        console.log("pass:"+password);
-        console.log("login:"+login);
-        console.log("userId:"+userId);
-
         setNewPurchase(1);
     }, [user])
 

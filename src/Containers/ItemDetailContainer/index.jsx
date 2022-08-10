@@ -4,13 +4,13 @@ import ItemDetail from '../../Components/ItemDetail';
 import {useParams} from 'react-router-dom';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../Firebase/config';
+import swalError from '../../Components/SweetAlert/error';
+import swal from 'sweetalert';
 
 const ItemDetailContainer = () => {
 
     const [productDetail, setProductDetail] = useState({});
     const params = useParams();
-
-    console.log(params);
 
     useEffect(() => {
         const getProductDetail = async () => {
@@ -20,20 +20,12 @@ const ItemDetailContainer = () => {
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
-                    console.log(docSnap.id)
-                    console.log("Document data:", docSnap.data());
                     const productDetail = {id: docSnap.id, ...docSnap.data()}
                     setProductDetail(productDetail)
-                } else {
-                    // doc.data() will be undefined in this case
-                    console.log("No such document!");
                 }
 
-                // const res = await fetch(`https://fakestoreapi.com/products/${params.productId}`);
-                // const data = await res.json();
-                // setProductDetail(data);
             } catch (error) {
-                console.log(error);
+                swal(swalError(error));
             }
         }
         setTimeout(getProductDetail(), 2000);

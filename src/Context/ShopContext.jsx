@@ -1,6 +1,4 @@
-import { where } from 'firebase/firestore';
 import React, { createContext, useEffect, useState } from 'react'
-import App from '../App';
 import Modal from '../Components/Modals/modal';
 import { loginOrSignin } from '../Components/NavBar/NavItems/logOrSign';
 import { profileData } from '../Components/NavBar/NavItems/profileData';
@@ -11,8 +9,6 @@ import comprasRealizadas from '../Utils/comprasRealizadas';
 export const Shop = createContext();
 
 const ShopProvider = ({ children }) => {
-
-    const [estadoA, setEstadoA] = useState('valor predeterminado');
 
     const [cart, setCart] = useState([]);
 
@@ -80,7 +76,7 @@ const ShopProvider = ({ children }) => {
         userStored = localStorage.getItem('user');
         passStored = localStorage.getItem('pass');
 
-        if (userStored != null && passStored != null) {
+        if (userStored !== null && passStored !== null && userStored !== "" && passStored !== "") {
 
             loginUsuario(userStored, passStored, setLogin, setPassword, setUser, setUserId);
             guardarDatos(userStored, passStored);

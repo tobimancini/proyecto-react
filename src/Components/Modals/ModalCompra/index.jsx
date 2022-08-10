@@ -1,32 +1,42 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import { Shop } from '../../../Context/ShopContext';
 import ordenGenerada from '../../../Utils/generarOrden';
 import './styles.css';
 
 const ModalCompra = () => {
 
-    const {cart, totalPrice, newPurchase} = useContext(Shop);
+    const { cart, totalPrice, newPurchase } = useContext(Shop);
 
     const order = ordenGenerada(cart, totalPrice, newPurchase);
     const purchase = order.compras;
     const items = purchase[`${newPurchase}`].items
 
-    
-    
+
+
     return (
         <div className='orderContainer'>
-        {items.map(el => {
-            return  <div key={el.id}>
-                        <p>producto: {el.title}</p>
-                        <p>precio unitario: ${el.price}</p>
-                        <div className='orderImgBox'>
-                            <img className='orderImg' src={el.image} alt="" />
+            <div className='titles'>
+                <div className='titleProduct'>producto</div>
+                <div className='title'>cantidad</div>
+                <div className='title'>precio unitario</div>
+                <div className='title'>precio total</div>
+            </div>
+            <div className='order'>
+                {items.map(el => {
+                    return <div key={el.id} className='itemContainer'>
+                        <div className='product'>
+                        <img className='itemImg' src={el.image} alt="" />
+                        <p className='titleItem'>{el.title}</p>
                         </div>
-                        <p>cantidad: {el.quantity}</p>
+                        <p className='textItem'>{el.quantity}</p>
+                        <p className='textItem'>${el.price}</p>
+                        <p className='textItem'>${el.quantity*el.price}</p>
                     </div>
-        })}
-        <div>total: ${purchase[`${newPurchase}`].total} </div>
+                })}
+            </div>
+            <div className='textItem'>total: ${purchase[`${newPurchase}`].total} </div>
         </div>
+
     )
 }
 

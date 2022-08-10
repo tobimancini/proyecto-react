@@ -1,6 +1,8 @@
 import React from "react";
 import './styles.css';
 import { useState } from "react";
+import swal from 'sweetalert';
+import swalError from "../SweetAlert/error";
 
 const ItemCount = ({onConfirm, initial, stock}) => {
     
@@ -9,7 +11,7 @@ const ItemCount = ({onConfirm, initial, stock}) => {
     const handleConfirm = () =>{
         count <= stock ?
         onConfirm(count):
-        console.log("Value > stock available");
+        swal(swalError("value > stock available"));
     }
 
     return (

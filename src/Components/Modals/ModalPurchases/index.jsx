@@ -15,10 +15,6 @@ const ModalPurchases = () => {
         comprasRealizadas(userId, 0, modalPurch, setGetPurch);
     }, [])
 
-    console.log(getPurch);
-
-    let totalSpent = 0;
-
     return (
         getPurch.length !== 0
         ?
