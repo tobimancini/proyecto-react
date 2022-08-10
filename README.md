@@ -1,8 +1,4 @@
-Here's our logo (hover to see the title text):
-
-Inline-style: 
 ![alt text](https://github.com/tobimancini/proyecto-react/blob/main/public/gif/gif-REACTPROYECT.gif "Logo Title Text 1")
-
 
 
 On this website, anyone will be able to create their own user, and navigate in between different categories of products, for then make a purchase.
