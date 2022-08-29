@@ -53,7 +53,7 @@ const Cart = () => {
         :
         <>
           <p className='noCart'>the cart is empty!</p>
-          <Link to='/' className='backContainer'><button className='backHome'>back home</button></Link>
+          <Link to='/proyecto-react' className='backContainer'><button className='backHome'>back home</button></Link>
         </>}
     </div>
 

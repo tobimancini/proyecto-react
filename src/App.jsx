@@ -16,10 +16,10 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route path='/' element={<ItemListContainer/>}></Route>
-          <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
-          <Route path='/detail/:productId' element={<ItemDetailContainer/>}></Route>
-          <Route path='/cart' element={<Cart/>}></Route>
+          <Route path='/proyecto-react' element={<ItemListContainer/>}></Route>
+          <Route path='/proyecto-react/category/:categoryId' element={<ItemListContainer/>}></Route>
+          <Route path='/proyecto-react/detail/:productId' element={<ItemDetailContainer/>}></Route>
+          <Route path='/proyecto-react/cart' element={<Cart/>}></Route>
           <Route path='*' element={<NotFound/>}></Route>
         </Routes>
       </BrowserRouter>

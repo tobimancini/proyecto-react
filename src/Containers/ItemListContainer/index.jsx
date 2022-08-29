@@ -59,7 +59,7 @@ const ItemListContainer = () => {
                         <h1 className="homeTitle">Welcome and happy shopping!</h1>
                         <div className="homeContainer">
                             <BsFillEmojiSunglassesFill className="emojiFace" />
-                            <p className="homeText">Here in RACOON we have all kinds of variety of products. From clothing to electronics, and even jewelry. You will find everything you need within a click.</p>
+                            <p className="homeText">Here in RACOON we have all kinds of variety of products. From clothing to electronics, and even jewelry. Find everything YOU need within a click.</p>
                         </div>
                         <div className="logoEnjoy">
                             <div className="racoonContainer">

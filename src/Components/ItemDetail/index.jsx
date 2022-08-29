@@ -19,7 +19,7 @@ const ItemDetail = ({ product }) => {
 
     const handleTerminate = () => {
         addItem(product, cartQty);
-        navigate('/cart');
+        navigate('/proyecto-react/cart');
     }
 
 
