@@ -47,15 +47,15 @@ const Cart = () => {
             })}
             <p className='totalPrice priceFont'>total : ${totalPrice}</p>
             <div className='buttons'>
-              <button className='purchaseBtn' onClick={() => confirmarOrden()}>buy</button>
-              <button className='eraseAllItems' onClick={() => clearAll()}>empty cart</button>
+              <button className='purchaseBtn' onClick={() => confirmarOrden()}>Buy</button>
+              <button className='eraseAllItems' onClick={() => clearAll()}>Empty Cart</button>
             </div>
           </ul >
         </>
         :
         <>
-          <p className='noCart'>the cart is empty!</p>
-          <button className='backHome' onClick={()=>navigate('../../proyecto-react/')}>back home</button>
+          <p className='noCart'>The cart is empty!</p>
+          <button className='backHome' onClick={()=>navigate('../../proyecto-react/')}>Back Home</button>
         </>}
     </div>
 

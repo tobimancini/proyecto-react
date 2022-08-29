@@ -34,11 +34,11 @@ const Dropdown = ({ items ,dropdown, setDropdown }) => {
 
                 login === true ?
                     <li key={index} className="menu-items" onClick={item.title === "log out" ? () => logOut() : ()=>openModalPurchases()} >
-                        <Link to="/">{item.title}</Link>
+                        <Link to='proyecto-react/' >{item.title}</Link>
                     </li>
                     :
                     <li key={index} className="menu-items" onClick={()=>openLoginModal(item.title)} >
-                        <Link to="/">{item.title}</Link>
+                        <Link to='proyecto-react/'>{item.title}</Link>
                     </li>                
             ))}
         </ul>

@@ -66,7 +66,7 @@ const ItemListContainer = () => {
                                 <div className="racoonLogo"></div>
                                 <div className="racoonTxt"></div>
                             </div>
-                            <h2 className="categoryTitle">enjoy!</h2>
+                            {/* <h2 className="categoryTitle">enjoy!</h2> */}
                         </div>
                     </>
                     :

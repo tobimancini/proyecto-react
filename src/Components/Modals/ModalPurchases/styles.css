@@ -39,7 +39,7 @@
     align-items: center;
     margin: 5px;
     padding: 2px;
-    color: rgb(56, 56, 56);
+    color: #d5cccc;
 }
 
 .titleProductPurch{
@@ -50,7 +50,7 @@
     align-items: center;
     margin: 5px;
     padding: 5px;
-    color: rgb(56, 56, 56);
+    color: #d5cccc;
 }
 
 .purchase{
