@@ -25,7 +25,7 @@ const Navbar = () => {
                         {menuItems.map((menu, index) => {
                             return (
                                 <li className="menu-items" key={index}>
-                                    <Link to={menu.title === "home" ? '/' : `/category/${menu.title}`}>{menu.title}</Link>
+                                    <Link to={menu.title === "home" ? 'proyecto-react/' : `proyecto-react/category/${menu.title}`}>{menu.title}</Link>
                                 </li>
                             );
                         })}

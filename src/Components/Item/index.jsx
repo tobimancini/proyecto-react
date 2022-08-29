@@ -7,7 +7,7 @@ const Item = ({product}) => {
     const navigate = useNavigate();
 
     const handleDetail = () =>{
-        navigate(`/detail/${product.id}`)
+        navigate(`proyecto-react/detail/${product.id}`)
     }
 
   return (

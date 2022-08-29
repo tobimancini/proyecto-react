@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Shop } from '../../Context/ShopContext';
 import './styles.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ordenGenerada from '../../Utils/generarOrden';
 import guardarOrden from '../../Utils/guardarOrden';
 import comprasRealizadas from '../../Utils/comprasRealizadas';
@@ -17,6 +17,8 @@ const Cart = () => {
     const orden = ordenGenerada(cart, totalPrice, newPurchase);
     guardarOrden(cart, orden, user, password, userId, setNewPurchase, setModalCompra, modalPurch, setGetPurch);
   }
+
+  const navigate = useNavigate();
 
   return (
     <div className='cartContainer'>
@@ -53,7 +55,7 @@ const Cart = () => {
         :
         <>
           <p className='noCart'>the cart is empty!</p>
-          <Link to='/proyecto-react' className='backContainer'><button className='backHome'>back home</button></Link>
+          <button className='backHome' onClick={()=>navigate('../../proyecto-react/')}>back home</button>
         </>}
     </div>
 

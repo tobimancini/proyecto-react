@@ -11,7 +11,7 @@ const CartWidget = () => {
 
 
     return (
-        <Link to="/cart">
+        <Link to="proyecto-react/cart">
             <FiShoppingCart className="cart" />
             {cart.length > 0 ?
                 <div className="cartQty">{cart.length}</div> :
