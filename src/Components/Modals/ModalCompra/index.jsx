@@ -28,13 +28,13 @@ const ModalCompra = () => {
                         <img className='itemImg' src={el.image} alt="" />
                         <p className='titleItem'>{el.title}</p>
                         </div>
-                        <p className='textItem'>{el.quantity}</p>
-                        <p className='textItem'>${el.price}</p>
-                        <p className='textItem'>${el.quantity*el.price}</p>
+                        <p className='textItem priceFont'>{el.quantity}</p>
+                        <p className='textItem priceFont'>${el.price}</p>
+                        <p className='textItem priceFont'>${el.quantity*el.price}</p>
                     </div>
                 })}
             </div>
-            <div className='textItem'>total: ${purchase[`${newPurchase}`].total} </div>
+            <div className='textItem priceFont'>total: ${purchase[`${newPurchase}`].total} </div>
         </div>
 
     )

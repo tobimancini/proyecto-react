@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .titles{
@@ -27,11 +27,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: rgb(136, 131, 131);
+    color: rgb(206, 200, 200);
     font-size: 14px;
 }
 
-.title{
+.titlePurch{
     width: 15%;
     text-align: center;
     display: flex;
@@ -39,9 +39,10 @@
     align-items: center;
     margin: 5px;
     padding: 2px;
+    color: rgb(56, 56, 56);
 }
 
-.titleProduct{
+.titleProductPurch{
     width: 40%;
     text-align: center;
     display: flex;
@@ -49,6 +50,7 @@
     align-items: center;
     margin: 5px;
     padding: 5px;
+    color: rgb(56, 56, 56);
 }
 
 .purchase{
@@ -60,4 +62,5 @@
     align-items: center;
     text-align: center;
     font-size: 14px;
+    text-align: center;
 }

@@ -1,13 +1,16 @@
 .cartContainer{
     height: 100%;
-    width: 80%;
-    padding: 50px;
+    width: 85%;
+    padding: 50px 100px 0px 50px;
+    margin: 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     color: #fff;
     align-self: flex-start;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
 }
 
 .titles{
@@ -18,12 +21,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: rgb(136, 131, 131);
+    color: rgb(176, 168, 168);
     font-size: 14px;
 }
 
 .title{
-    width: 20%;
+    width: 15%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -76,8 +79,9 @@
     padding: 5px;
 }
 
-.itemImg{
-    height: 80px;
+.cartImg{
+    height: 150px;
+    width: auto;
 }
 
 .titleItem{
@@ -90,7 +94,7 @@
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    width: 20%;
+    width: 15%;
     margin: 5px;
     padding: 2px;
 }
@@ -116,7 +120,6 @@
 .totalPrice{
     align-self: flex-end;
     margin-top: 30px;
-    margin-right: 90px;
     font-size: 18px;
     font-weight: 600;
 }
@@ -136,8 +139,8 @@
     height: 50px;
     cursor: pointer;
     background-color: rgb(35, 92, 46);
-    border: solid 2px rgb(35, 92, 46);
     color: #fff;
+    border: none;
     border-radius: 2px;
     font-size: 16px;
     font-weight: 600;
@@ -146,7 +149,6 @@
 
 .purchaseBtn:hover{
     background-color: rgb(65, 145, 81);
-    border-color: #fff;
 }
 
 .eraseAllItems{
@@ -155,8 +157,8 @@
     height: 50px;
     cursor: pointer;
     background-color: rgb(155, 54, 54);
-    border: solid 2px rgb(155, 54, 54);
     color: #fff;
+    border: none;
     border-radius: 2px;
     font-size: 16px;
     font-weight: 600;
@@ -165,12 +167,19 @@
 }
 
 .eraseAllItems:hover{
-    border-color: #fff;
     background-color: rgb(195, 87, 87);
 }
 
+.backContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .noCart{
-    margin-top: 100px;
+    align-self: center;
+    margin-top: 30px;
     color: #fff;
     font-size: 25px;
     font-weight: 600;
@@ -184,14 +193,19 @@
     background-color: #fff;
     border: solid 2px #fff;
     color: #000;
-    border-radius: 2px;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     transition: all 100ms ease-in-out;
+    align-self: center;
 }
 
 .backHome:hover{
     background-color: #000;
     color: #fff;
+}
+
+.priceFont{
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
 }

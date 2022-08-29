@@ -17,6 +17,8 @@ const Navbar = () => {
 
         <header>
             <div className="nav-area">
+                <div className="logoImg"></div>
+                <div className="logoText"></div>
                 <nav>
 
                     <ul className="menus">

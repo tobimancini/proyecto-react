@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +12,7 @@ header {
     height: 70px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     color: #212529;
-    background-color: rgb(37, 37, 37);
+    background-color: rgba(10, 10, 10, 0.851);
     width: 100%;
     overflow: visible;
     border-bottom: solid 1px rgb(189, 184, 184);
@@ -112,7 +114,7 @@ header {
     z-index: 9999;
     min-width: 10rem;
     list-style: none;
-    background-color: rgb(37, 37, 37);
+    background-color: rgba(10, 10, 10, 0.851);
     border-radius: 0px;
     border: solid 1px #fff;
     border-top: none;
@@ -140,6 +142,28 @@ header {
     text-align: center;
     min-width: 50px;
     color: rgb(189, 184, 184);
-    font-weight: 600;
-    padding-left: 15px;
+    font-weight: 400;
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+  }
+
+  .logoImg{
+    background-image: url(../../../public/racoon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    margin: 20px
+  }
+
+  .logoText{
+    background-image: url(../../../public/racoonTxt.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 100px;
+    margin-right: 250px;
   }

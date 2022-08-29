@@ -1,31 +1,42 @@
 .item {
     position: relative;
-    height: 270px;
-    width: 270px;
+    height: 300px;
+    width: 300px;
     background-color: #fff;
     color: #000;
-    margin: 10px;
-    padding: 5px;
+    margin-bottom: 0px;
+    padding: 3px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    border: solid 2px rgb(198, 198, 198);
+    border: solid 1px rgb(198, 198, 198);
     overflow: hidden;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     transition: all 100ms ease-in-out;
-}
-
-.item:hover .itemImage, .item:hover .itemPrice{
-    transform: scale(1.1);
+    margin-bottom: 20px;
 }
 
 .itemTitle {
     font-size: 12px;
-    padding: 5px;
+    padding: 15px;
     width: 100%;
     height: auto;
-    border-bottom: solid 2px rgb(198, 198, 198);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    transition: all 50ms ease-in-out;
+}
+
+.item:hover .itemTitle {
+    background-color: rgb(25, 25, 25);
+    color: #fff;
 }
 
 .itemImage {
@@ -36,19 +47,20 @@
 
 .itemPrice {
     align-self: flex-start;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     height: auto;
     min-width: 60px;
     margin-top: 10px;
     margin-left: 15px;
     margin-bottom: 10px;
     font-weight: 600;
-    background-color: rgb(35, 148, 69);
+    font-family: 'Lobster', cursive;
+    background-color: rgb(53 58 54);
     color: #fff;
-    border-radius: 2px;
-    border: solid 1px rgb(13, 222, 90);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     transition: all 100ms ease-in-out;
 }
 
@@ -59,6 +71,7 @@
     margin-right: 5px;
     font-size: 22px;
     font-style: italic;
+    font-family: 'Lobster', cursive;
     cursor: pointer;
     transition: all 100ms ease-in-out;
 }

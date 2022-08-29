@@ -20,11 +20,11 @@ const ModalPurchases = () => {
         ?
         <div className='purchaseContainer'>
             <div className='titles'>
-                <div className='titleProduct'>producto</div>
-                <div className='title'>fecha compra</div>
-                <div className='title'>cantidad</div>
-                <div className='title'>precio unitario</div>
-                <div className='title'>precio total</div>
+                <div className='titleProductPurch'>producto</div>
+                <div className='titlePurch'>fecha compra</div>
+                <div className='titlePurch'>cantidad</div>
+                <div className='titlePurch'>precio unitario</div>
+                <div className='titlePurch'>precio total</div>
             </div>
             <div className='purchase'>
             {getPurch.map(compra => {

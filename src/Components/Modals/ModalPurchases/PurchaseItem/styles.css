@@ -27,6 +27,7 @@
 .titleItem{
     width: 100%;
     margin-top: 5px;
+    color: #fff;
 }
 
 .textItem{
@@ -37,4 +38,5 @@
     width: 15%;
     margin: 5px;
     padding: 2px;
+    color: #fff;
 }
