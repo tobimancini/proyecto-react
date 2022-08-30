@@ -12,10 +12,13 @@ header {
     height: 70px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     color: #212529;
-    background-color: rgba(10, 10, 10, 0.851);
+    background-image: url(../../../public/retroNew.jpg);
+    /*linear-gradient(rgba(0, 0, 0, 0.3), transparent),*/
+    background-position: center;
+    background-size: cover;
     width: 100%;
     overflow: visible;
-    border-bottom: solid 1px rgb(189, 184, 184);
+    border-bottom: solid 2px rgb(252, 249, 249);
   }
 
   nav{
@@ -55,21 +58,17 @@ header {
     height: 100%;
     width: 100px;
     text-align: center;
-    font-size: inherit;
+    font-size: 16px;
     text-decoration: none;
-    color: rgb(189, 184, 184);
+    color: rgb(0, 0, 0);
     font-weight: 600;
-  }
-
-  .menu-items a:hover .cartQty{
-    background-color: #000;
-    color: #fff;
+    transition: all 100ms ease-in-out;
   }
   
   .menu-items button {
     position: relative;
     align-self: flex-end;
-    color: rgb(189, 184, 184);
+    color: rgb(0, 0, 0);
     font-size: 40px;
     border: none;
     background-color: transparent;
@@ -80,6 +79,7 @@ header {
     height: 100%;
     min-width: 80px;
     text-align: center;
+    transition: all 100ms ease-in-out;
   }
   
   .menu-items a,
@@ -90,8 +90,7 @@ header {
   
   .menu-items a:hover,
   .menu-items button:hover{
-    background-color: #f2f2f2;
-    color: #212529;
+    transform: scale(1.2);
   }
   
   .arrow::after {
@@ -114,9 +113,9 @@ header {
     z-index: 9999;
     min-width: 10rem;
     list-style: none;
-    background-color: rgba(10, 10, 10, 0.851);
+    background-color: rgb(255, 255, 255);
     border-radius: 0px;
-    border: solid 1px #fff;
+    border: solid 2px #fff;
     border-top: none;
     display: none;
 
@@ -141,29 +140,36 @@ header {
   .loginText{
     text-align: center;
     min-width: 50px;
-    color: rgb(189, 184, 184);
+    color: rgb(0, 0, 0);
     font-weight: 400;
     padding: 15px;
-    font-size: 20px;
-    font-family: 'Lobster', cursive;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .navBarLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .logoImg{
-    background-image: url(../../../public/racoon.png);
+    background-image: url(../../../public/racoonBlack.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     margin: 20px
   }
 
   .logoText{
-    background-image: url(../../../public/racoonTxt.png);
+    background-image: url(../../../public/racoonTxtBlack.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 300px;
-    height: 100px;
-    margin-right: 250px;
+    width: 130px;
+    height: 50px;
+    margin-right: 230px;
   }

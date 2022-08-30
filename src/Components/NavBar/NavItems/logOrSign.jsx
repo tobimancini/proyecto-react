@@ -3,6 +3,6 @@ export const loginOrSignin = [
         title: "log in"
     },
     {
-        title: "sign in"
+        title: "sign up"
     }
 ]

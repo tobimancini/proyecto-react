@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from '../../Firebase/config';
 import { BsFillEmojiSunglassesFill } from 'react-icons/bs';
+import { RiWhatsappFill } from 'react-icons/ri';
 import swal from 'sweetalert';
 import swalError from "../../Components/SweetAlert/error";
 
@@ -58,7 +59,7 @@ const ItemListContainer = () => {
                         <p className="initialTxt">hi there,</p>
                         <h1 className="homeTitle">Welcome and happy shopping!</h1>
                         <div className="homeContainer">
-                            <BsFillEmojiSunglassesFill className="emojiFace" />
+                            <div className="caritaFeliz"></div>
                             <p className="homeText">Here in RACOON we have all kinds of variety of products. From clothing to electronics, and even jewelry. Find everything YOU need within a click.</p>
                         </div>
                         <div className="logoEnjoy">
@@ -66,7 +67,6 @@ const ItemListContainer = () => {
                                 <div className="racoonLogo"></div>
                                 <div className="racoonTxt"></div>
                             </div>
-                            {/* <h2 className="categoryTitle">enjoy!</h2> */}
                         </div>
                     </>
                     :
@@ -74,10 +74,19 @@ const ItemListContainer = () => {
                         <>
                             <h2 className="categoryTitle">{params.categoryId}</h2>
                             <ItemList products={productosFiltrados} />
+                            <div className="rainbow">
+                                <span className="color red"></span>
+                                <span className="color orange"></span>
+                                <span className="color lgreen"></span>
+                                <span className="color dgreen"></span>
+                            </div>
                         </>
                         :
                         <p className="loading">Loading...</p>
             }
+
+            <RiWhatsappFill className="wAppLogo" />
+
         </div>
     )
 }

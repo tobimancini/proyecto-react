@@ -1,6 +1,6 @@
 import React from "react";
 import './styles.css';
-import { FiShoppingCart } from 'react-icons/fi';
+import { MdShoppingCart } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { Shop } from "../../../Context/ShopContext";
@@ -12,7 +12,7 @@ const CartWidget = () => {
 
     return (
         <Link to="proyecto-react/cart">
-            <FiShoppingCart className="cart" />
+            <MdShoppingCart className="cart" />
             {cart.length > 0 ?
                 <div className="cartQty">{cart.length}</div> :
                 null}

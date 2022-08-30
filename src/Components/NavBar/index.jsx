@@ -16,8 +16,10 @@ const Navbar = () => {
 
         <header>
             <div className="nav-area">
-                <div className="logoImg"></div>
-                <div className="logoText"></div>
+                <div className='navBarLogo'>
+                    <div className="logoImg"></div>
+                    <div className="logoText"></div>
+                </div>
                 <nav>
 
                     <ul className="menus">
