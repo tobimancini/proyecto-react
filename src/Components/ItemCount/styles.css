@@ -1,84 +1,68 @@
-.itemCount{
-    margin-top: 30px;
-    padding: 10px;
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: auto;
-    width: 150px;
-    border: solid 1px rgb(255, 255, 255);
-    border-radius: 2px;
-    background-color: rgb(24, 24, 24);
-    margin: 20px;
-}
-
-.itemYStock{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: auto;
-}
-
-.hayStock{
-    font-size: 10px;
-    color: rgb(74, 74, 223);
-    font-weight: 600;
-}
-
 .noStock{
-    font-size: 10px;
-    color: rgb(182, 46, 46);
+    font-size: 20px;
+    color: rgb(255, 255, 255);
     font-weight: 600;
+    align-self: flex-end;
+    margin: 10px;
+    font-style: italic;
+    background-color: #DC4244;
+    padding: 5px;
+    border-radius: 50px;
 }
 
-.quantityChange{
+.qtyContainer{
+    align-self: flex-end;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    margin: 30px;
-    padding: 0px 15px 0px 15px;
-    border: solid 1px rgb(255, 255, 255);
-    border-radius: 2px;
+    margin: 10px;
 }
 
-.addDeduct{
-    border: none;
-    background-color: rgb(24, 24, 24);
-    font-size: 30px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    transition: all 100ms ease-in-out;
-}
-
-.addDeduct:hover{
-    color: rgb(74, 74, 223);
-}
-
-.addCart{
-    border: solid 1px rgb(0,0,0);
-    border-radius: 2px;
-    background-color: rgb(238, 235, 235);
-    color: #000;
-    padding: 5px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 100ms ease-in-out;
-}
-
-.addCart:hover{
+.qtyTxt{
+    font-size: 20px;
     color: #fff;
-    background-color: rgb(24, 24, 24);
-    border: solid 1px #fff;
+    font-weight: 600;
+    margin: 5px;
 }
 
-.quantity{
+.stockAv{
     font-size: 16px;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
+    color: rgb(170, 166, 166);
+    font-style: italic;
+    font-weight: 400;
+    margin: 5px;
 }
+
+#qtyChosen{
+    width: 50px;
+    height: 40px;
+    font-size: 18px;
+    text-align: start;
+    padding: 2px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.btnConfirm {
+    align-self: flex-end;
+    height: auto;
+    width: auto;
+    font-size: 15px;
+    padding: 15px;
+    margin: 40px 145px 15px 0px;
+    background-color: #e98049;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 100ms ease-in-out;
+}
+
+.btnConfirm:hover {
+    color: #fff;
+    background-color: rgb(237 180 109);
+}
+
+

@@ -5,16 +5,15 @@
     background-color: #fff;
     color: #000;
     margin-bottom: 0px;
-    padding: 3px;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: solid 1px rgb(198, 198, 198);
+    border: solid 1px #ea834b7f;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 40px -8px, rgba(0, 0, 0, 0.3) 0px 10px 20px -10px, rgba(10, 37, 64, 0.35) 0px -1px 2px 0px inset;
     transition: all 100ms ease-in-out;
     margin-bottom: 20px;
 }
@@ -31,11 +30,11 @@
     text-align: center;
     background-color: #fff;
     color: #000;
-    transition: all 50ms ease-in-out;
+    transition: all 100ms ease-in-out;
 }
 
 .item:hover .itemTitle {
-    background-color: rgb(25, 25, 25);
+    background-color: #ea824b;
     color: #fff;
 }
 
@@ -57,7 +56,7 @@
     margin-bottom: 10px;
     font-weight: 600;
     font-family: 'Lobster', cursive;
-    background-color: rgb(53 58 54);
+    background-color: #ea824b;
     color: #fff;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;

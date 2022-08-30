@@ -9,18 +9,13 @@ const ItemDetail = ({ product }) => {
 
     const navigate = useNavigate();
 
-    const [cartQty, setCartQty] = useState(0);
-
     const { addItem } = useContext(Shop);
 
     const handleConfirm = (qty) => {
-        setCartQty(qty);
-    }
-
-    const handleTerminate = () => {
-        addItem(product, cartQty);
+        addItem(product, qty);
         navigate('../proyecto-react/cart');
     }
+
 
 
     return (
@@ -35,10 +30,7 @@ const ItemDetail = ({ product }) => {
                     <h1 className='productTitle'>{product.title}</h1>
                     <p className='productDescription'>Description:<br /><br />{product.description}</p>
                     <p className='productPrice'>$ {product.price}</p>
-                    {!cartQty ?
-                        <ItemCount onConfirm={handleConfirm} initial={1} stock={product.stock} /> :
-                        <button className='buttonTerminate' onClick={handleTerminate}>Terminar Compra</button>
-                    }
+                    <ItemCount onConfirm={handleConfirm} stock={product.stock} /> 
                 </div>
 
             </div>

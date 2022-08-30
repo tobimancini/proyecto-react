@@ -85,7 +85,7 @@ const ItemListContainer = () => {
                         <p className="loading">Loading...</p>
             }
 
-            <RiWhatsappFill className="wAppLogo" />
+            <a href="#socialMedia"><RiWhatsappFill className="wAppLogo" /></a>
 
         </div>
     )

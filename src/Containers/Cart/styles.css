@@ -134,40 +134,41 @@
     align-items: flex-end;
 }
 
-.purchaseBtn{
+.purchaseBtn {
     width: 150px;
-    height: 50px;
+    height: auto;
+    padding: 15px;
     cursor: pointer;
-    background-color: rgb(35, 92, 46);
+    background-color: #e98049;
     color: #fff;
     border: none;
-    border-radius: 2px;
+    border-radius: 10px;
     font-size: 16px;
     font-weight: 600;
     transition: all 100ms ease-in-out;
 }
 
 .purchaseBtn:hover{
-    background-color: rgb(65, 145, 81);
+    background-color:rgb(237 180 109);
 }
 
 .eraseAllItems{
     align-self: flex-end;
     width: 150px;
-    height: 50px;
+    height: auto;
+    padding: 15px;
     cursor: pointer;
-    background-color: rgb(155, 54, 54);
+    background-color: #617c75;
     color: #fff;
     border: none;
-    border-radius: 2px;
+    border-radius: 10px;
     font-size: 16px;
     font-weight: 600;
     transition: all 100ms ease-in-out;
-    justify-self: end;
 }
 
 .eraseAllItems:hover{
-    background-color: rgb(195, 87, 87);
+    background-color: #87a990;
 }
 
 .backContainer{
@@ -187,22 +188,22 @@
 
 .backHome{
     width: 150px;
-    height: 50px;
-    margin: 30px 30px 30px 100px;
+    height: auto;
+    padding: 15px;
     cursor: pointer;
-    background-color: #fff;
-    border: solid 2px #fff;
-    color: #000;
+    background-color: #e98049;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
     font-size: 16px;
     font-weight: 600;
-    text-decoration: none;
     transition: all 100ms ease-in-out;
+    margin: 30px 30px 30px 100px;
     align-self: center;
 }
 
 .backHome:hover{
-    background-color: #000;
-    color: #fff;
+    background-color: rgb(237 180 109);
 }
 
 .priceFont{
