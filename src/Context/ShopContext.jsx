@@ -5,6 +5,7 @@ import { profileData } from '../Components/NavBar/NavItems/profileData';
 import guardarDatos from '../Storage/localStorage';
 import loginUsuario from '../UserData/login';
 import comprasRealizadas from '../Utils/comprasRealizadas';
+import { useSnackbar } from 'notistack';
 
 export const Shop = createContext();
 
@@ -26,6 +27,8 @@ const ShopProvider = ({ children }) => {
 
     const [newPurchase, setNewPurchase] = useState(0);
     const [orden, setOrden] = useState({});
+
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
 
     const addItem = (producto, cantidad) => {
@@ -78,7 +81,7 @@ const ShopProvider = ({ children }) => {
 
         if (userStored !== null && passStored !== null && userStored !== "" && passStored !== "") {
 
-            loginUsuario(userStored, passStored, setLogin, setPassword, setUser, setUserId);
+            loginUsuario(userStored, passStored, setLogin, setPassword, setUser, setUserId, setUserId, enqueueSnackbar);
             guardarDatos(userStored, passStored);
             setLogin(true);
 
@@ -102,7 +105,7 @@ const ShopProvider = ({ children }) => {
         <Shop.Provider value={{
             userStored, passStored, addItem, cart, setCart, removeItem, clearAll, totalPrice, makePurchase, orderFinalPrice, modalLogin, setModalLogin,
             modalCompra, setModalCompra, setUser, setPassword, setLogin, user, password, login, userId, setUserId, newPurchase, setNewPurchase, orden, logged, setLogged, logOrSign,
-            setLogOrSign, modalPurch, setModalPurch, getPurch, setGetPurch
+            setLogOrSign, modalPurch, setModalPurch, getPurch, setGetPurch, enqueueSnackbar
         }}>
             {
                 modalLogin === true || modalCompra === true || modalPurch === true?

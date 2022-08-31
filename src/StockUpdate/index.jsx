@@ -1,9 +1,10 @@
 import { updateDoc, doc, getDoc } from "firebase/firestore";
-import swalError from "../Components/SweetAlert/error";
+import { useContext } from "react";
+import { Shop } from "../Context/ShopContext";
 import { db } from '../Firebase/config';
-import swal from 'sweetalert';
 
-const stockUpdate = async (cart) => {
+const stockUpdate = async (cart, enqAlert) => {
+
     
     try {
         const updateStock = async(id, qty) =>{
@@ -28,7 +29,7 @@ const stockUpdate = async (cart) => {
             updateStock(productId, qty);
         });
     } catch (error) {
-        swal(swalError(error))
+        enqAlert(error, {variant : "error"})
     }
 
 }

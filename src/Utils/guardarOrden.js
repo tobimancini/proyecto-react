@@ -3,11 +3,9 @@ import { collection, doc, getDoc, getDocs, query, setDoc, where, writeBatch } fr
 import { db } from "../Firebase/config";
 import stockUpdate from "../StockUpdate";
 import comprasRealizadas from "./comprasRealizadas";
-import swal from 'sweetalert';
-import swalError from "../Components/SweetAlert/error";
 
 
-const guardarOrden = async (cart, orden, userName, userPass, idUser, setNewPurchase, modal, modalPurch, setGetPurch) => {
+const guardarOrden = async (cart, orden, userName, userPass, idUser, setNewPurchase, modal, modalPurch, setGetPurch, enqAlert) => {
 
     const batch = writeBatch(db)
 
@@ -28,7 +26,7 @@ const guardarOrden = async (cart, orden, userName, userPass, idUser, setNewPurch
                         outOfStock.push(producto)
                     }
     
-                    if (outOfStock.length === 0) {
+                    if (outOfStock.length === 0 && userName !== "") {
     
                         //Obtengo el ID del User logueado.
                         const q = query(collection(db, "users"), where("nombre", "==", userName), where("contraseña", "==", userPass));
@@ -40,30 +38,27 @@ const guardarOrden = async (cart, orden, userName, userPass, idUser, setNewPurch
                         });
     
                         //Le agrego al usuario la compra realizada.
+
+
                         await setDoc(doc(db, "users", userId), orden, { merge: true });
                         comprasRealizadas(idUser, setNewPurchase, modalPurch, setGetPurch);
+                        modal(true);
+                        stockUpdate(cart, enqAlert);
+
+                        enqAlert('your purchase was successful', {variant:"info"})
                         
     
                     } else {
-                        let mensaje = ''
-                        for (const producto of outOfStock) {
-                            mensaje += `${producto.title}`
-                        }
-                        swal(swalError(`productos fuera de stock: ${mensaje}`))
+                        enqAlert("log in to make a purchase", {variant : "info"});
                     }
     
-                    if (outOfStock.length === 0) {
-                        modal(true);
-                        stockUpdate(cart);
-                    } else {
-                        swal(swalError("inicie sesión para realizar una compra"));
-                    }
+
                 })
 
         }
 
         catch(error){
-            swal(swalError(error));
+            enqAlert(error, {variant:"error"});
         }
     })
 

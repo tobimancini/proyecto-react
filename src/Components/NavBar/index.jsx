@@ -44,7 +44,7 @@ const Navbar = () => {
                     {
                         login === true ?
                             <div className="loginText">
-                                <p>{user}</p>
+                                <p id='userNameTop'>{user}</p>
                             </div>
                             :
                             null

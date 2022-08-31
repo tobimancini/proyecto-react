@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react';
 import ItemDetail from '../../Components/ItemDetail';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../Firebase/config';
-import swalError from '../../Components/SweetAlert/error';
-import swal from 'sweetalert';
+import { SyncLoader } from 'react-spinners';
+import { Shop } from '../../Context/ShopContext';
 
 const ItemDetailContainer = () => {
 
     const [productDetail, setProductDetail] = useState({});
     const params = useParams();
+    const {enqueueSnackbar} = useContext(Shop);
 
     useEffect(() => {
         const getProductDetail = async () => {
@@ -25,7 +26,7 @@ const ItemDetailContainer = () => {
                 }
 
             } catch (error) {
-                swal(swalError(error));
+                enqueueSnackbar(error, {variant : "error"});
             }
         }
         setTimeout(getProductDetail(), 2000);
@@ -35,7 +36,9 @@ const ItemDetailContainer = () => {
 
         Object.keys(productDetail).length !== 0 ?
             <ItemDetail product={productDetail} /> :
-            <p className='loading'>Loading...</p>
+            <div className="loadingContainer">
+                <SyncLoader size={30} color={"#e98049"} />
+            </div>
 
     )
 }

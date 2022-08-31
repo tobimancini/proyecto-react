@@ -4,16 +4,18 @@ import './styles.css';
 import { useParams } from 'react-router-dom';
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from '../../Firebase/config';
-import { BsFillEmojiSunglassesFill } from 'react-icons/bs';
+import ClipLoader from "react-spinners/ClipLoader";
 import { RiWhatsappFill } from 'react-icons/ri';
-import swal from 'sweetalert';
-import swalError from "../../Components/SweetAlert/error";
+import { SyncLoader } from "react-spinners";
+import { useContext } from "react";
+import { Shop } from "../../Context/ShopContext";
 
 
 const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([]);
     const [productosFiltrados, setProductosFiltrados] = useState([]);
+    const {enqueueSnackbar} = useContext(Shop);
 
     const params = useParams();
 
@@ -52,42 +54,51 @@ const ItemListContainer = () => {
 
 
     return (
-        <div className="itemListContainer">
+        <>
+        {
+        !productos.length ?
+        <div className="loadingContainer">
+            <SyncLoader size={30} color={"#e98049"} />
+        </div>
+        :
+        <div className={!params.categoryId?"itemListContainer leaveLogoSpace":"itemListContainer"}>
             {
                 !params.categoryId ?
                     <>
-                        <p className="initialTxt">hi there,</p>
+                        <p className="initialTxt">Hi there,</p>
                         <h1 className="homeTitle">Welcome and happy shopping!</h1>
                         <div className="homeContainer">
                             <div className="caritaFeliz"></div>
                             <p className="homeText">Here in RACOON we have all kinds of variety of products. From clothing to electronics, and even jewelry. Find everything YOU need within a click.</p>
                         </div>
-                        <div className="logoEnjoy">
-                            <div className="racoonContainer">
-                                <div className="racoonLogo"></div>
-                                <div className="racoonTxt"></div>
-                            </div>
+                        <div className="bigRacoon"></div>
+                        <div className="bigRacoonTxt"></div>
+                        <div className="rainbowVertical">
+                            <span className="colorv red"></span>
+                            <span className="colorv orange"></span>
+                            <span className="colorv lgreen"></span>
+                            <span className="colorv dgreen"></span>
                         </div>
                     </>
                     :
-                    productos.length !== 0 ?
-                        <>
-                            <h2 className="categoryTitle">{params.categoryId}</h2>
-                            <ItemList products={productosFiltrados} />
-                            <div className="rainbow">
-                                <span className="color red"></span>
-                                <span className="color orange"></span>
-                                <span className="color lgreen"></span>
-                                <span className="color dgreen"></span>
-                            </div>
-                        </>
-                        :
-                        <p className="loading">Loading...</p>
+                    <>
+                        <h2 className="categoryTitle">{params.categoryId}</h2>
+                        <ItemList products={productosFiltrados} />
+                        <div className="rainbow">
+                            <span className="color red"></span>
+                            <span className="color orange"></span>
+                            <span className="color lgreen"></span>
+                            <span className="color dgreen"></span>
+                        </div>
+                    </>
+
             }
 
-            <a href="#socialMedia"><RiWhatsappFill className="wAppLogo" /></a>
+            <RiWhatsappFill className="wAppLogo" />
 
         </div>
+        }
+        </>
     )
 }
 

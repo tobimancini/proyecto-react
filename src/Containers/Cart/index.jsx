@@ -10,12 +10,12 @@ import comprasRealizadas from '../../Utils/comprasRealizadas';
 
 const Cart = () => {
 
-  const { cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, setModalCompra, modalPurch, setGetPurch } = useContext(Shop);
+  const { cart, removeItem, clearAll, totalPrice, user, password, userId, setNewPurchase, newPurchase, setModalCompra, modalPurch, setGetPurch, enqueueSnackbar } = useContext(Shop);
 
   const confirmarOrden = async () => {
     comprasRealizadas(userId, setNewPurchase, modalPurch, setGetPurch);
     const orden = ordenGenerada(cart, totalPrice, newPurchase);
-    guardarOrden(cart, orden, user, password, userId, setNewPurchase, setModalCompra, modalPurch, setGetPurch);
+    guardarOrden(cart, orden, user, password, userId, setNewPurchase, setModalCompra, modalPurch, setGetPurch, enqueueSnackbar);
   }
 
   const navigate = useNavigate();
@@ -26,10 +26,10 @@ const Cart = () => {
         ?
         <>
           <div className='titles'>
-            <div className='titleProduct'>producto</div>
-            <div className='title'>cantidad</div>
-            <div className='title'>precio unitario</div>
-            <div className='title'>precio total</div>
+            <div className='titleProduct'>product</div>
+            <div className='title'>quantity</div>
+            <div className='title'>unit price</div>
+            <div className='title'>total price</div>
           </div>
           <ul className='cartList'>
             {cart.map(producto => {

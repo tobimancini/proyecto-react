@@ -1,17 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import './styles.css';
 import { useState } from "react";
-import swal from 'sweetalert';
-import swalError from "../SweetAlert/error";
+import { Shop } from "../../Context/ShopContext";
 
-const ItemCount = ({ onConfirm, setCartQty, initial, stock }) => {
+const ItemCount = ({ onConfirm, stock }) => {
+
+    const {enqueueSnackbar} = useContext(Shop);
 
     const handleConfirm = () => {
         const qtyChosen = document.getElementById('qtyChosen').value;
         // setCartQty(qtyChosen);
         qtyChosen <= stock ?
             onConfirm(qtyChosen) :
-            alert("value > stock available");
+            enqueueSnackbar("value > stock available", {variant : "info"});
     }
 
     const [stockAvailable, setStockAvailable] = useState([]);
@@ -37,11 +38,11 @@ const ItemCount = ({ onConfirm, setCartQty, initial, stock }) => {
         <>
             {
                 !stockAvailable.length ?
-                    <h3 className="noStock">No hay stock disponible en este momento.</h3>
+                    <h3 className="noStock">No stock available at the moment.</h3>
                     :
                     <>
                         <div className="qtyContainer">
-                            <h3 className="qtyTxt">Cantidad:</h3>
+                            <h3 className="qtyTxt">Quantity:</h3>
                             <select id="qtyChosen" name="qty">
                                 {
                                     stockAvailable.map(unidades => {
@@ -49,9 +50,9 @@ const ItemCount = ({ onConfirm, setCartQty, initial, stock }) => {
                                     })
                                 }
                             </select>
-                            <p className="stockAv">({stockAvailable.length} disponibles)</p>
+                            <p className="stockAv">({stockAvailable.length} available)</p>
                         </div>
-                        <button className="btnConfirm" onClick={() => handleConfirm()}>Agregar al carrito</button>
+                        <button className="btnConfirm" onClick={() => handleConfirm()}>Add to cart</button>
                     </>
             }
         </>

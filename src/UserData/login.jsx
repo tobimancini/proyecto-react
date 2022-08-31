@@ -1,33 +1,36 @@
 import { collection, query, where, getDocs } from "firebase/firestore";
-import swalError from "../Components/SweetAlert/error";
 import { db } from "../Firebase/config";
-import swal from 'sweetalert';
 
-const loginUsuario = async(name, pass, functLogin, functPassword, functUser, functId, log) => {
-    
+const loginUsuario = async (name, pass, functLogin, functPassword, functUser, functId, log, enqAlert) => {
+
     try {
         const usersRef = collection(db, "users");
         const q = query(usersRef, where("nombre", "==", name), where("contraseña", "==", pass));
-    
+
         const querySnapshot = await getDocs(q);
-        
-        if (querySnapshot.size>0) {
+
+        if (querySnapshot.size > 0) {
             functLogin(true);
             functPassword(pass);
             functUser(name);
-            
+
+            // setModalLogin(false)
+
             querySnapshot.forEach(doc => {
                 functId(doc.id);
             });
-    
-        }else{
-            if (log === true) {
-                swal(swalError("no existe el usuario"));
-            }
+
         }
+        // }else{
+
+        // enqAlert("no existe el usuario", {variant:"error"});
+
+        // }
     } catch (error) {
-        swal(swalError(error));
+        enqAlert(error, { variant: "error" });
     }
+
+
 }
 
 export default loginUsuario;

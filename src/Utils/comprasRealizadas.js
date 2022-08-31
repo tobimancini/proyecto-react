@@ -1,7 +1,5 @@
 import { doc, getDoc } from "firebase/firestore";
-import swalError from "../Components/SweetAlert/error";
 import { db } from "../Firebase/config";
-import swal from 'sweetalert';
 
 const comprasRealizadas = async (id, nuevaCompra, modalPurch, setGetPurch) => {
 

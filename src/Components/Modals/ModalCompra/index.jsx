@@ -16,10 +16,10 @@ const ModalCompra = () => {
     return (
         <div className='orderContainer'>
             <div className='titles'>
-                <div className='titleProduct'>producto</div>
-                <div className='title'>cantidad</div>
-                <div className='title'>precio unitario</div>
-                <div className='title'>precio total</div>
+                <div className='titleProduct'>product</div>
+                <div className='title'>quantity</div>
+                <div className='title'>unit price</div>
+                <div className='title'>total price</div>
             </div>
             <div className='order'>
                 {items.map(el => {

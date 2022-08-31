@@ -11,23 +11,22 @@
 }
 
 .qtyContainer{
-    align-self: flex-end;
+    align-self: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10px;
 }
 
 .qtyTxt{
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
     font-weight: 600;
     margin: 5px;
 }
 
 .stockAv{
-    font-size: 16px;
+    font-size: 14px;
     color: rgb(170, 166, 166);
     font-style: italic;
     font-weight: 400;
@@ -35,9 +34,9 @@
 }
 
 #qtyChosen{
-    width: 50px;
-    height: 40px;
-    font-size: 18px;
+    width: 45px;
+    height: 35px;
+    font-size: 16px;
     text-align: start;
     padding: 2px;
     font-weight: 600;
@@ -47,13 +46,14 @@
 .btnConfirm {
     align-self: flex-end;
     height: auto;
-    width: auto;
+    width: 100%;
     font-size: 15px;
-    padding: 15px;
-    margin: 40px 145px 15px 0px;
+    padding: 20px;
+    margin-top: 30px;
     background-color: #e98049;
     color: #fff;
-    border-radius: 10px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
     border: none;
     cursor: pointer;
     font-weight: 600;

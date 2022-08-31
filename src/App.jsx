@@ -6,7 +6,6 @@ import NotFound from './Components/NotFound';
 import Cart from './Containers/Cart';
 import ShopProvider, { Shop } from './Context/ShopContext';
 import Navbar from './Components/NavBar';
-import swal from 'sweetalert';
 import Footer from './Containers/Footer';
 
 function App() {

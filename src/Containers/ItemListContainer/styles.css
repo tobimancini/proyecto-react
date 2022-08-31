@@ -2,9 +2,9 @@
 
 .itemListContainer {
     position: relative;
-    margin: 50px;
+    margin: 80px;
     height: 100%;
-    width: 85%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -27,14 +27,15 @@
     align-self: flex-start;
     padding: 50px 0 0 20px;
     font-weight: 600;
+    margin: 20px;
 }
 
 .homeTitle {
     font-family: 'Lobster', cursive;
     align-self: center;
     padding-left: 10px;
-    font-size: 100px;
-    margin: 10px;
+    font-size: 85px;
+    margin: 20px;
     color: #fff;
     text-shadow: 5px 5px 0px #eb452b,
         8px 8px 0px #efa032,
@@ -47,12 +48,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 40px;
+    margin: 50px;
 }
 
 .homeText {
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
     width: 60%;
     align-self: flex-end;
     height: auto;
@@ -65,7 +66,7 @@
     z-index: 1;
     align-self: flex-end;
     padding-right: 10px;
-    font-size: 70px;
+    font-size: 65px;
     margin: 20px;
     color: #fff;
     text-shadow: 3px 3px 0px #eb452b,
@@ -78,8 +79,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 200px;
-    width: 200px;
+    height: 165px;
+    width: 165px;
 }
 
 .logoEnjoy {
@@ -133,7 +134,7 @@
     border-radius: 50px;
     /* background-color: rgba(255, 255, 255, 0.247); */
     background-color: #fff;
-    border: solid 2px rgba(0, 0, 0, 0.609);
+    border: solid 2px #46b59b;
     transition: all 100ms ease-in-out;
 }
 
@@ -175,3 +176,78 @@
 .dgreen{
     background-color: #017e7f;
 }
+
+.loadingContainer{
+    height: 500px;
+    width: 500px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner{
+    margin-right: 400px;
+    font-size: 100px;
+}
+
+.leaveLogoSpace{
+    position: relative;
+    align-self: flex-start;
+    margin: 80px;
+    height: 100%;
+    width: 72%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    background-color: rgba(0, 0, 0, 0.609);
+}
+
+.bigRacoon{
+    position: absolute;
+    background-image: url(../../../public/racoonOrange.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 161px;
+    width: 170px;
+    right: -250px;
+    top: 315px;
+    z-index: 2;
+  }
+
+  .bigRacoonTxt{
+    position: absolute;
+    background-image: url(../../../public/racoonTxtOrange.png);
+    background-position: center;
+    background-size: cover;
+    height: 30px;
+    width: 150px;
+    right: -245px;
+    top: 490px;
+    z-index: 2;
+  }
+
+  .rainbowVertical{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    overflow: hidden;
+    right: -245px;
+    top: 300px;
+    bottom: 0px;
+  }
+
+  .colorv{
+    height: 100%;
+    width: 4px;
+  }

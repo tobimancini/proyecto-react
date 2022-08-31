@@ -29,8 +29,10 @@ const ItemDetail = ({ product }) => {
                 <div className='details'>
                     <h1 className='productTitle'>{product.title}</h1>
                     <p className='productDescription'>Description:<br /><br />{product.description}</p>
-                    <p className='productPrice'>$ {product.price}</p>
-                    <ItemCount onConfirm={handleConfirm} stock={product.stock} /> 
+                    <div className='detailSubContainer'>
+                        <p className='productPrice'>$ {product.price}</p>
+                        <ItemCount onConfirm={handleConfirm} stock={product.stock} />
+                    </div>
                 </div>
 
             </div>
