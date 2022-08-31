@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.css": "/proyecto-react/static/css/main.1eac5e9e.css",
-    "main.js": "/proyecto-react/static/js/main.63db1c26.js",
+    "main.css": "/proyecto-react/static/css/main.f6c0947f.css",
+    "main.js": "/proyecto-react/static/js/main.151975e3.js",
     "static/js/787.b84ff08a.chunk.js": "/proyecto-react/static/js/787.b84ff08a.chunk.js",
     "static/media/bgimage.jpeg": "/proyecto-react/static/media/bgimage.55cdb767ebfa48899741.jpeg",
+    "static/media/racoonOrange.png": "/proyecto-react/static/media/racoonOrange.c17493dd24ae59327555.png",
     "static/media/carita.png": "/proyecto-react/static/media/carita.c74c449f1ce71dc9365c.png",
+    "static/media/racoonTxtOrange.png": "/proyecto-react/static/media/racoonTxtOrange.94a944d8153047707735.png",
     "static/media/retroNew.jpg": "/proyecto-react/static/media/retroNew.d33a01fec34ea286d264.jpg",
     "static/media/retroFooter.jpg": "/proyecto-react/static/media/retroFooter.d072da9e0ffaaa672a0e.jpg",
     "static/media/racoon.png": "/proyecto-react/static/media/racoon.ee175c9e500a5704d1cd.png",
@@ -12,12 +14,12 @@
     "static/media/racoonTxtBlack.png": "/proyecto-react/static/media/racoonTxtBlack.9deaac6cc0db2f98de28.png",
     "static/media/racoonBlack.png": "/proyecto-react/static/media/racoonBlack.6876cb1930f2f6622c23.png",
     "index.html": "/proyecto-react/index.html",
-    "main.1eac5e9e.css.map": "/proyecto-react/static/css/main.1eac5e9e.css.map",
-    "main.63db1c26.js.map": "/proyecto-react/static/js/main.63db1c26.js.map",
+    "main.f6c0947f.css.map": "/proyecto-react/static/css/main.f6c0947f.css.map",
+    "main.151975e3.js.map": "/proyecto-react/static/js/main.151975e3.js.map",
     "787.b84ff08a.chunk.js.map": "/proyecto-react/static/js/787.b84ff08a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1eac5e9e.css",
-    "static/js/main.63db1c26.js"
+    "static/css/main.f6c0947f.css",
+    "static/js/main.151975e3.js"
   ]
 }
