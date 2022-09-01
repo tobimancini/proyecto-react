@@ -1,175 +1,242 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 header {
-    height: 70px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    color: #212529;
-    background-image: url(../../../public/retroNew.jpg);
-    /*linear-gradient(rgba(0, 0, 0, 0.3), transparent),*/
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    overflow: visible;
-    border-bottom: solid 2px rgb(252, 249, 249);
-  }
+  height: 70px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  color: #212529;
+  background-image: url(../../../public/retroNew.jpg);
+  /*linear-gradient(rgba(0, 0, 0, 0.3), transparent),*/
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  overflow: visible;
+  border-bottom: solid 2px rgb(252, 249, 249);
+}
 
-  nav{
-    height: 100%;
-  }
-  
-  .nav-area {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .menus {
-    display: flex;
-    list-style: none;
-    height: 100%;
-  }
-  
-  .menu-items {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    transition: all 100ms ease-in-out;
-    height: 100%;
-  }
-  
-  .menu-items a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100px;
-    text-align: center;
-    font-size: 16px;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    transition: all 100ms ease-in-out;
-  }
-  
-  .menu-items button {
-    position: relative;
-    align-self: flex-end;
-    color: rgb(0, 0, 0);
-    font-size: 40px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    min-width: 80px;
-    text-align: center;
-    transition: all 100ms ease-in-out;
-  }
-  
-  .menu-items a,
-  .menu-items button {
-    text-align: left;
-    padding: 0.7rem 1rem;
-  }
-  
-  .menu-items a:hover,
-  .menu-items button:hover{
-    text-shadow: 0.5px 0.5px 0px rgb(87, 85, 85);
-  }
-  
-  .arrow::after {
-    content: "";
-    display: inline-block;
-    margin-left: 0.28em;
-    vertical-align: 0.09em;
-    border-top: 0.42em solid;
-    border-right: 0.32em solid transparent;
-    border-left: 0.32em solid transparent;
-  }
-  
-  .dropdown {
-    position: absolute;
-    top: 101%;
-    right: 0;
-    left: auto;
-    box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08), 0 4px 6px -2px rgba(71, 63, 79, 0.16);
-    font-size: 14px;
-    z-index: 9999;
-    min-width: 10rem;
-    list-style: none;
-    background-color: rgb(255, 255, 255);
-    border-radius: 0px;
-    border: solid 2px #fff;
-    border-top: none;
-    display: none;
+nav {
+  height: 100%;
+}
 
-  }
-  
-  .dropdown.show {
-    display: block;
-  }
+.nav-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-  .dropdown .menu-items a{
-    width: 100%;
-  }
+.menus {
+  display: flex;
+  list-style: none;
+  height: 100%;
+}
 
-  .userContainer{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
+.menu-items {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  transition: all 100ms ease-in-out;
+  height: 100%;
+}
 
-  .loginText{
-    text-align: center;
-    min-width: 50px;
-    color: rgb(0, 0, 0);
-    font-weight: 400;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: 700;
-  }
+.menu-items a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  transition: all 100ms ease-in-out;
+}
 
-  .navBarLogo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+.menu-items button {
+  position: relative;
+  align-self: flex-end;
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-width: 80px;
+  text-align: center;
+  transition: all 100ms ease-in-out;
+}
 
-  .logoImg{
-    background-image: url(../../../public/racoonBlack.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+.menu-items a,
+.menu-items button {
+  text-align: left;
+  padding: 0.7rem 1rem;
+}
+
+.menu-items a:hover,
+.menu-items button:hover {
+  text-shadow: 0.5px 0.5px 0px rgb(87, 85, 85);
+}
+
+.arrow::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.28em;
+  vertical-align: 0.09em;
+  border-top: 0.42em solid;
+  border-right: 0.32em solid transparent;
+  border-left: 0.32em solid transparent;
+}
+
+.dropdown {
+  position: absolute;
+  top: 101%;
+  right: 0;
+  left: auto;
+  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08), 0 4px 6px -2px rgba(71, 63, 79, 0.16);
+  font-size: 14px;
+  z-index: 9999;
+  min-width: 10rem;
+  list-style: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px;
+  border: solid 2px #fff;
+  border-top: none;
+  display: none;
+
+}
+
+.dropdown.show {
+  display: block;
+}
+
+.dropdown .menu-items a {
+  width: 100%;
+}
+
+.userContainer {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.loginText {
+  text-align: center;
+  min-width: 50px;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.navBarLogo {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImg {
+  background-image: url(../../../public/racoonBlack.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+}
+
+.logoText {
+  background-image: url(../../../public/racoonTxtBlack.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 130px;
+  height: 50px;
+}
+
+/*********** 992px MAX-WIDTH ***********/
+
+@media screen and (max-width:992px) {
+  header {
     height: 60px;
-    width: 60px;
-    margin: 20px
   }
 
-  .logoText{
-    background-image: url(../../../public/racoonTxtBlack.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 130px;
-    height: 50px;
-    margin-right: 230px;
+  .menu-items a {
+    font-size: 14px;
+    width: 80px;
   }
+
+  .dropdown {
+    font-size: 12px;
+  }
+
+  .loginText {
+    font-size: 14px;
+    font-style: italic;
+    padding: 0;
+  }
+
+  .logoImg {
+    height: 40px;
+    width: 40px;
+  }
+
+  .logoText {
+    width: 100px;
+    height: 35px;
+  }
+}
+
+/*********** 768px MAX-WIDTH ***********/
+
+@media screen and (max-width:768px) {
+  header {
+    height: 55px;
+  }
+
+  .menu-items a {
+    font-size: 12px;
+    width: 70px;
+  }
+
+  .dropdown {
+    font-size: 12px;
+  }
+
+  .loginText {
+    font-size: 12px;
+    font-style: italic;
+    padding: 0;
+  }
+
+  .logoImg {
+    height: 40px;
+    width: 40px;
+  }
+
+  .logoText {
+    width: 100px;
+    height: 35px;
+  }
+}

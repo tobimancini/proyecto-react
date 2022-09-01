@@ -12,7 +12,7 @@ const CartWidget = () => {
 
     return (
         <Link to="proyecto-react/cart">
-            <MdShoppingCart className="cart" />
+            <MdShoppingCart className={window.screen.width < 991 ? "navItem naranja cart" : "navItem cart"} />
             {cart.length > 0 ?
                 <div className="cartQty">{cart.length}</div> :
                 null}

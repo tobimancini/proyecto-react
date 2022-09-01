@@ -78,3 +78,88 @@
 .itemDetails:hover {
     color: rgb(97, 97, 241);
 }
+
+/*********** 992px MAX-WIDTH ***********/
+
+@media screen and (max-width:992px){
+    .item {
+        height: 230px;
+        width: 230px;
+    }
+    
+    .itemTitle {
+        font-size: 10px;
+        padding: 10px;
+        margin-bottom: 7px;
+    }
+    
+    .itemImage {
+        height: 100px;
+    }
+    
+    .itemPrice {
+        font-size: 18px;
+    }
+    
+    .itemDetails {
+        bottom: 15px;
+        font-size: 18px;
+    }
+}
+
+/*********** 768px MAX-WIDTH ***********/
+
+@media screen and (max-width:768px){
+    .item {
+        height: 230px;
+        width: 230px;
+    }
+    
+    .itemTitle {
+        font-size: 10px;
+        padding: 10px;
+        margin-bottom: 7px;
+    }
+    
+    .itemImage {
+        height: 100px;
+    }
+    
+    .itemPrice {
+        font-size: 18px;
+    }
+    
+    .itemDetails {
+        bottom: 15px;
+        font-size: 18px;
+    }
+}
+
+/*********** 576px MAX-WIDTH ***********/
+
+@media screen and (max-width:576px){
+    .item {
+        height: 190px;
+        width: 190px;
+    }
+    
+    .itemTitle {
+        font-size: 10px;
+        padding: 5px;
+        margin-bottom: 3px;
+    }
+    
+    .itemImage {
+        height: 90px;
+    }
+    
+    .itemPrice {
+        font-size: 16px;
+        padding: 5px;
+    }
+    
+    .itemDetails {
+        bottom: 10px;
+        font-size: 14px;
+    }
+}

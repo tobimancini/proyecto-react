@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import "./App.css";
+import './Bootstrap/styles.css'
 import reportWebVitals from './reportWebVitals';
 import { SnackbarProvider } from 'notistack';
 

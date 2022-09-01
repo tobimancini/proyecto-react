@@ -3,3 +3,11 @@
     color: #000;
     transition: all 100ms ease-in-out;
 }
+
+/*********** 992px MAX-WIDTH ***********/
+
+@media screen and (max-width:992px){
+    .userWidget{
+        font-size: 30px;
+    }
+}

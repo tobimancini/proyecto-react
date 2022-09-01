@@ -22,12 +22,15 @@
 }
 
 .initialTxt {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
     font-size: 22px;
     align-self: flex-start;
-    padding: 50px 0 0 20px;
+    padding: 60px 0 30px 30px;
     font-weight: 600;
-    margin: 20px;
 }
 
 .homeTitle {
@@ -83,44 +86,6 @@
     width: 165px;
 }
 
-.logoEnjoy {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-self: flex-end;
-    width: 100%;
-}
-
-.racoonContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-end;
-    margin-left: 15px;
-    height: 60px;
-}
-
-.racoonTxt {
-    background-image: url(../../../public/racoonTxt.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 50px;
-    width: 90px;
-    margin: 5px;
-}
-
-.racoonLogo {
-    background-image: url(../../../public/racoon.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 50px;
-    width: 50px;
-    margin: 5px;
-}
-
 .wAppLogo {
     position: fixed;
     z-index: 1;
@@ -132,19 +97,17 @@
     color: #46b59b;
     padding: 10px;
     border-radius: 50px;
-    /* background-color: rgba(255, 255, 255, 0.247); */
     background-color: #fff;
     border: solid 2px #46b59b;
     transition: all 100ms ease-in-out;
 }
 
 .wAppLogo:hover {
-    /* transform: scale(1.07); */
     padding: 1px;
     background-color: rgb(255, 255, 255);
 }
 
-.rainbow{
+.rainbow {
     position: absolute;
     top: 70px;
     display: flex;
@@ -156,28 +119,28 @@
     background-color: #000;
 }
 
-.color{
+.color {
     width: 100%;
     height: 3px;
 }
 
-.red{
+.red {
     background-color: #eb452b;
 }
 
-.orange{
+.orange {
     background-color: #efa032;
 }
 
-.lgreen{
+.lgreen {
     background-color: #46b59b;
 }
 
-.dgreen{
+.dgreen {
     background-color: #017e7f;
 }
 
-.loadingContainer{
+.loadingContainer {
     height: 500px;
     width: 500px;
     align-self: center;
@@ -186,12 +149,12 @@
     align-items: center;
 }
 
-.spinner{
+.spinner {
     margin-right: 400px;
     font-size: 100px;
 }
 
-.leaveLogoSpace{
+.leaveLogoSpace {
     position: relative;
     align-self: flex-start;
     margin: 80px;
@@ -207,7 +170,7 @@
     background-color: rgba(0, 0, 0, 0.609);
 }
 
-.bigRacoon{
+.bigRacoon {
     position: absolute;
     background-image: url(../../../public/racoonOrange.png);
     background-size: cover;
@@ -218,9 +181,9 @@
     right: -250px;
     top: 315px;
     z-index: 2;
-  }
+}
 
-  .bigRacoonTxt{
+.bigRacoonTxt {
     position: absolute;
     background-image: url(../../../public/racoonTxtOrange.png);
     background-position: center;
@@ -230,9 +193,9 @@
     right: -245px;
     top: 490px;
     z-index: 2;
-  }
+}
 
-  .rainbowVertical{
+.rainbowVertical {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -245,9 +208,268 @@
     right: -245px;
     top: 300px;
     bottom: 0px;
-  }
+}
 
-  .colorv{
+.colorv {
     height: 100%;
     width: 4px;
-  }
+}
+
+/*********** 992px MAX-WIDTH ***********/
+
+@media screen and (max-width:992px) {
+    .itemListContainer {
+        margin: 60px;
+    }
+
+    .initialTxt {
+        font-size: 18px;
+    }
+
+    .homeTitle {
+        padding-left: 10px;
+        font-size: 70px;
+    }
+
+    .homeContainer {
+        margin: 40px;
+    }
+
+    .homeText {
+        font-size: 18px;
+        margin: 30px;
+    }
+
+    .categoryTitle {
+        padding-right: 10px;
+        font-size: 50px;
+    }
+
+    .caritaFeliz {
+        height: 140px;
+        width: 140px;
+    }
+
+    .wAppLogo {
+        height: 50px;
+        width: 50px;
+        top: 85px;
+        right: 20px;
+        font-size: 45px;
+        padding: 7px;
+    }
+
+    .rainbow {
+        top: 55px;
+    }
+
+    .loadingContainer {
+        height: 400px;
+        width: 400px;
+    }
+
+    .spinner {
+        font-size: 85px;
+    }
+
+    .bigRacoon {
+        height: 135px;
+        width: 140px;
+        right: -165px;
+        top: 365px;
+    }
+
+    .bigRacoonTxt {
+        height: 20px;
+        width: 120px;
+        right: -155px;
+        top: 520px;
+    }
+
+    .rainbowVertical {
+        right: -165px;
+        top: 340px;
+        bottom: 0px;
+    }
+}
+
+/*********** 768px MAX-WIDTH ***********/
+
+@media screen and (max-width:768px) {
+    .itemListContainer {
+        margin: 60px;
+    }
+
+    .initialTxt {
+        font-size: 16px;
+        padding: 50px 0 10px 30px;
+    }
+
+    .homeTitle {
+        padding-left: 10px;
+        font-size: 60px;
+        margin: 30px;
+    }
+
+    .homeContainer {
+        margin: 35px;
+    }
+
+    .homeText {
+        font-size: 16px;
+        margin: 20px;
+    }
+
+    .categoryTitle {
+        padding-right: 10px;
+        font-size: 45px;
+    }
+
+    .caritaFeliz {
+        height: 130px;
+        width: 130px;
+    }
+
+    .wAppLogo {
+        height: 40px;
+        width: 40px;
+        top: 85px;
+        right: 20px;
+        font-size: 40px;
+        padding: 7px;
+    }
+
+    .rainbow {
+        top: 50px;
+    }
+
+    .loadingContainer {
+        height: 380px;
+        width: 380px;
+    }
+
+    .spinner {
+        font-size: 80px;
+    }
+
+    .bigRacoon {
+        height: 100px;
+        width: 105px;
+        right: -120px;
+        top: 345px;
+    }
+
+    .bigRacoonTxt {
+        height: 15px;
+        width: 85px;
+        right: -115px;
+        top: 455px;
+    }
+
+    .rainbowVertical {
+        right: -120px;
+        top: 330px;
+        bottom: 0px;
+    }
+}
+
+/*********** 576px MAX-WIDTH ***********/
+
+@media screen and (max-width:576px) {
+    .itemListContainer {
+        margin: 50px;
+    }
+
+    .leaveLogoSpace {
+        align-self: center;
+        margin: 50px;
+        width: 80%;
+    }
+
+    .initialTxt {
+        font-size: 16px;
+        padding: 30px 0 10px 30px;
+    }
+
+    .homeTitle {
+        padding-left: 0px;
+        font-size: 40px;
+        margin: 20px;
+        text-shadow: 2px 2px 0px #eb452b,
+        4px 4px 0px #efa032,
+        6px 6px 0px #46b59b,
+        7px 7px 0px #017e7f;
+    }
+
+    .homeContainer {
+        margin: 20px;
+    }
+
+    .homeText {
+        font-size: 13px;
+        margin: 20px;
+    }
+
+    .categoryTitle {
+        padding-right: 10px;
+        font-size: 33px;
+        text-shadow: 1px 1px 0px #eb452b,
+        3px 3px 0px #efa032,
+        4px 4px 0px #46b59b;
+    }
+
+    .caritaFeliz {
+        height: 100px;
+        width: 100px;
+    }
+
+    .wAppLogo {
+        height: 37px;
+        width: 37px;
+        top: 85px;
+        right: 15px;
+        font-size: 40px;
+        padding: 7px;
+    }
+
+    .rainbow {
+        top: 40px;
+    }
+
+    .loadingContainer {
+        height: 340px;
+        width: 340px;
+    }
+
+    .spinner {
+        font-size: 70px;
+    }
+
+    .bigRacoon {
+        height: 115px;
+        width: 120px;
+        right: 240px;
+        top: 380px;
+    }
+
+    .bigRacoonTxt {
+        height: 35px;
+        width: 170px;
+        right: 45px;
+        top: 430px;
+    }
+
+    .rainbowVertical {
+        flex-direction: column;
+        bottom: -250px;
+        left: 0;
+        width: 100%;  
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .colorv{
+        height: 4px;
+        width: 100%;
+    }
+}

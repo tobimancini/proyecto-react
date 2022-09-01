@@ -216,3 +216,155 @@
     font-family: 'Lobster', cursive;
     font-size: 25px;
 }
+
+/*********** 992px MAX-WIDTH ***********/
+
+@media screen and (max-width:992px){
+    .cartContainer{
+        width: 75%;
+    }
+    
+    .priceFont{
+        font-size: 20px;
+    }
+}
+
+/*********** 768px MAX-WIDTH ***********/
+
+@media screen and (max-width:768px){
+    .cartContainer{
+        width: 75%;
+    }
+    
+    .priceFont{
+        font-size: 18px;
+    }
+}
+
+/*********** 576px MAX-WIDTH ***********/
+
+@media screen and (max-width:576px){
+    .cartContainer{
+        width: 80%;
+    }
+    
+    .titles{
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    .title{
+        width: 20%;
+    }
+    
+    .cartList{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+        padding: 0;
+    }
+    
+    .cartItem{
+        font-size: 12px;
+    }
+    
+    .product{
+        padding: 3px;
+    }
+    
+    .cartImg{
+        height: 100px;
+        width: auto;
+    }
+    
+    .textItem{
+        font-size: 12px;
+        width: 20%;
+    }
+    
+    .eraseItem{
+        height: 30px;
+        width: 30px;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-style: none;
+    }
+    
+    .totalPrice{
+        font-size: 16px;
+    }
+    
+    .buttons{
+        height: 90px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+    }
+    
+    .purchaseBtn {
+        width: 110px;
+        height: auto;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .eraseAllItems{
+        width: 110px;
+        height: auto;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .eraseAllItems:hover{
+        background-color: #87a990;
+    }
+    
+    .backContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .noCart{
+        align-self: center;
+        margin: 30px 0px 0px 80px;
+        color: #fff;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+    .backHome{
+        width: 150px;
+        height: auto;
+        padding: 15px;
+        cursor: pointer;
+        background-color: #e98049;
+        color: #fff;
+        border: none;
+        border-top-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 100ms ease-in-out;
+        margin: 30px 30px 30px 100px;
+        align-self: center;
+    }
+    
+    .backHome:hover{
+        background-color: rgb(237 180 109);
+    }
+    
+    .priceFont{
+        font-family: 'Lobster', cursive;
+        font-size: 25px;
+    }
+}

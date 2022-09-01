@@ -7,14 +7,16 @@ import Cart from './Containers/Cart';
 import ShopProvider, { Shop } from './Context/ShopContext';
 import Navbar from './Components/NavBar';
 import Footer from './Containers/Footer';
+import NavbarMe from './Components/NavBar';
 
 function App() {
 
   return (
     <ShopProvider>
-      <div className='container'>
+      <div className='appContainer'>
         <BrowserRouter>
-          <Navbar />
+          {/* <NavbarBS /> */}
+          <NavbarMe />
           <Routes>
             <Route path='proyecto-react/' element={<ItemListContainer />}></Route>
             <Route path='proyecto-react/category/:categoryId' element={<ItemListContainer />}></Route>

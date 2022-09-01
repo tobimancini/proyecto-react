@@ -140,3 +140,27 @@
 .closeModal:hover {
   color: #fff;
 }
+
+/*********** 992px MAX-WIDTH ***********/
+
+@media screen and (max-width:992px){
+  .modalLarge{
+    width: 800px;
+  }
+}
+
+/*********** 768px MAX-WIDTH ***********/
+
+@media screen and (max-width:768px){
+  .modalLarge{
+    width: 650px;
+  }
+}
+
+/*********** 576px MAX-WIDTH ***********/
+
+@media screen and (max-width:576px){
+  .modalLarge{
+    width: 450px;
+  }
+}

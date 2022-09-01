@@ -29,3 +29,29 @@
 .face:hover {
     color: #4047a8;
 }
+
+/*********** 992px MAX-WIDTH ***********/
+
+@media screen and (max-width:992px){
+    #socialMedia {
+        width: 150px;
+    }
+    
+    .logosSM {
+        font-size: 35px;
+        padding: 7px;
+    }
+}
+
+/*********** 768px MAX-WIDTH ***********/
+
+@media screen and (max-width:768px){
+    #socialMedia {
+        width: 140px;
+    }
+    
+    .logosSM {
+        font-size: 30px;
+        padding: 7px;
+    }
+}
