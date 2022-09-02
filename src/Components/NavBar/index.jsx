@@ -33,8 +33,8 @@ const NavbarMe = () => {
     }
 
     const cartToggle = () => {
-        alert(window.screen.width)
-        return window.screen.width < 992 ? 'navItem toggleNaranja' : "navItem noToggle"
+        ///alert(window.screen.width)
+        return window.screen.width < 992 ? 'nav-link toggleNaranja' : "nav-link noToggle"
     }
 
     const closeToggle = () => {
@@ -61,8 +61,8 @@ const NavbarMe = () => {
                         <Nav className="me-auto">
                             {menuItems.map((menu, index) => {
                                 return (
-                                    <Nav.Link as={'div'} key={index} className={onToggleMode(index)} onClick={() => closeToggle()} >
-                                        <Link to={menu.title === "home" ? 'proyecto-react/' : `proyecto-react/category/${menu.title}`} className="navItem" >{menu.title}</Link>
+                                    <Nav.Link as={'div'} key={index} className={onToggleMode(index)} >
+                                        <Link onClick={() => closeToggle()} to={menu.title === "home" ? 'proyecto-react/' : `proyecto-react/category/${menu.title}`} className="navItem" >{menu.title}</Link>
                                     </Nav.Link>
                                 );
                             })}
@@ -70,7 +70,7 @@ const NavbarMe = () => {
                                 <CartWidget />
                             </Nav.Link>
                             <Nav.Link as={'div'} className={cartToggle()}>
-                                <UserWidget />
+                                <UserWidget login={login} user={user} />
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

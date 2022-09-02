@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.modal {
+.modalMe {
   position: relative;
   margin: 0 auto;
   display: flex;
@@ -49,7 +49,7 @@
 }
 
 
-.form {
+.formMe {
   width: 90%;
   max-height: 500px;
   position: relative;
@@ -60,7 +60,7 @@
   overflow-y: auto;
 }
 
-.form .loginInput {
+.formMe .loginInput {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -73,7 +73,7 @@
   border-radius: 2px;
 }
 
-.form .loginBtn {
+.formMe .loginBtn {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #989797;
@@ -88,14 +88,14 @@
   cursor: pointer;
 }
 
-.form .loginBtn:hover,
-.form .loginBtn:active,
-.form .loginBtn:focus {
+.formMe .loginBtn:hover,
+.formMe .loginBtn:active,
+.formMe .loginBtn:focus {
   background: #fff;
   color: #000;
 }
 
-.form .loginTitle{
+.formMe .loginTitle{
   font-size: 45px;
   font-weight: 400;
   padding-bottom: 10px;
@@ -103,23 +103,23 @@
   font-family: 'Lobster', cursive;
 }
 
-.form .message {
+.formMe .message {
   margin: 15px 0 0;
   color: #fff;
   font-size: 12px;
 }
 
-.form .message .switch {
+.formMe .message .switch {
   color: #88f9fb;
   text-decoration: none;
   cursor: pointer;
 }
 
-.form .register-form.off {
+.formMe .register-form.off {
   display: none;
 }
 
-.form .login-form.off {
+.formMe .login-form.off {
   display: none;
 }
 

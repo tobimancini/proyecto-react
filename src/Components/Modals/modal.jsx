@@ -20,8 +20,8 @@ const Modal = () => {
 
     return (
         <div className='modalBG'>
-            <div className={modalLogin===true?'modal':'modalLarge'}>
-                <div className="form">
+            <div className={modalLogin===true?'modalMe':'modalLarge'}>
+                <div className="formMe">
                     {
                         modalLogin === true ?
                             <ModalLogin />

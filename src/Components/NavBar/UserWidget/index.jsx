@@ -1,12 +1,12 @@
 import React from "react";
-import { BiUser } from 'react-icons/bi';
+import { FaUser } from 'react-icons/fa';
 import { Shop } from "../../../Context/ShopContext";
 import { useContext } from "react";
 import { useState } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import './styles.css';
 
-const UserWidget = () => {
+const UserWidget = (login, user) => {
 
     const [dropdown, setDropdown] = useState(false);
     const { logged } = useContext(Shop);
@@ -15,9 +15,19 @@ const UserWidget = () => {
     return (
         <>
             <div className="navItem" aria-haspopup="menu" aria-expanded={dropdown ? "true" : "false"} onClick={() => setDropdown((prev) => !prev)}>
-                <BiUser className="userWidget" />
-                <Dropdown items={logged} dropdown={dropdown} setDropdown={setDropdown} />
+                <FaUser className="userWidget" />
+                <Dropdown items={logged} dropdown={dropdown} setDropdown={setDropdown}  />
             </div>
+
+            {
+                login === true ?
+                    <div className="loginText">
+                        <p id='userNameTop'>{user}</p>
+                    </div>
+                    :
+                    null
+            }
+
 
         </>
 
@@ -25,16 +35,3 @@ const UserWidget = () => {
 }
 
 export default UserWidget;
-
-{/* <div className="menu-items">
-    <UserWidget />
-</div>
-{
-    login === true ?
-        <div className="loginText">
-            <p id='userNameTop'>{user}</p>
-        </div>
-        :
-        null
-} */}
-

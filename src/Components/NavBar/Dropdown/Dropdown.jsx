@@ -1,30 +1,30 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { Shop } from '../../../Context/ShopContext';
 import './styles.css'
 
-const Dropdown = ({ items ,dropdown, setDropdown }) => {
+const Dropdown = ({ items, dropdown, setDropdown }) => {
 
     const { setModalLogin, login, setLogin, setLogOrSign, setModalPurch } = useContext(Shop);
 
     const openLoginModal = (item) => {
-        setModalLogin(true);
+        item === "log in"? setLogOrSign("login") : setLogOrSign("sign");
+        
         setDropdown(false);
+        setModalLogin(true);
 
-        item === "log in"? setLogOrSign("login") : setLogOrSign("sign")
     }
 
     const logOut = () => {
         localStorage.removeItem("user");
         localStorage.removeItem("pass")
-
+        
+        setDropdown(false);
         setLogin(false);
-        setDropdown(false)
     }
 
     const openModalPurchases = () => {
-        setModalPurch(true);
         setDropdown(false);
+        setModalPurch(true);
     }
 
    
@@ -34,12 +34,12 @@ const Dropdown = ({ items ,dropdown, setDropdown }) => {
             {items.map((item, index) => (
 
                 login === true ?
-                    <li key={index} className="dropdownList" onClick={item.title === "log out" ? () => logOut() : ()=>openModalPurchases()} >
-                        <Link className="dropdownItem" to='proyecto-react/' >{item.title}</Link>
+                    <li key={index} className="dropdownList" >
+                        <div onClick={item.title === "log out" ? () => logOut() : ()=>openModalPurchases()} className="dropdownItem"  >{item.title}</div>
                     </li>
                     :
-                    <li key={index} className="dropdownList" onClick={()=>openLoginModal(item.title)} >
-                        <Link className="dropdownItem" to='proyecto-react/'>{item.title}</Link>
+                    <li key={index} className="dropdownList" >
+                        <div onClick={()=>openLoginModal(item.title)} className="dropdownItem">{item.title}</div>
                     </li>                
             ))}
         </ul>
