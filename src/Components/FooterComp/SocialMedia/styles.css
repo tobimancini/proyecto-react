@@ -12,11 +12,17 @@
 
 .logosSM {
     font-size: 40px;
-    height: 101%;
+    height: 60px;
     width: 101%;
     color: #000;
     padding: 10px;
     transition: all 100ms ease-in-out;
+}
+
+.logosSM:hover{
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .inst:hover {

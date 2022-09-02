@@ -8,116 +8,74 @@ import UserWidget from "./UserWidget";
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import { NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
 const NavbarMe = () => {
 
-    const { login, user } = useContext(Shop);    
+    const { login, user } = useContext(Shop);
 
-    // const classAsign = (index) =>{
-    //     if (index === 0) {
-    //         return "navItem verde"
-    //     }else if(index === 1){
-    //         return "navItem amarillo"
-    //     }else if(index === 2){
-    //         return "navItem naranja"
-    //     }else if(index === 3){
-    //         return "navItem verde"
-    //     }else if(index === 4){
-    //         return "navItem amarillo"
-    //     }
-    // }
-
-    
-
-    const onToggleMode = (index)=>{
+    const onToggleMode = (index) => {
         if (window.screen.width < 992) {
             if (index === 0) {
                 return "toggleVerde"
-            }else if(index === 1){
+            } else if (index === 1) {
                 return "toggleAmarillo"
-            }else if(index === 2){
+            } else if (index === 2) {
                 return "toggleNaranja"
-            }else if(index === 3){
+            } else if (index === 3) {
                 return "toggleVerde"
-            }else if(index === 4){
+            } else if (index === 4) {
                 return "toggleAmarillo"
             }
+        } else {
+            return "noToggle"
         }
     }
 
-    const cartToggle = () =>{
+    const cartToggle = () => {
         alert(window.screen.width)
-        return window.screen.width < 992 ?'toggleNaranja' : ""
+        return window.screen.width < 992 ? 'navItem toggleNaranja' : "navItem noToggle"
+    }
+
+    const closeToggle = () => {
+        let btnToggler = document.querySelector('.navbar-toggler');
+        let navbarToggle = document.getElementById('navbar-collapse');
+
+        btnToggler.classList.add('collapsed');
+        navbarToggle.classList.remove('show');
     }
 
     return (
 
         <header>
-        {/* //     <div className="nav-area"> */}
-        <Navbar expand="lg">
-            <Container>
-                <Navbar.Brand>
-                    <div className='navBarLogo'>
-                        <div className="logoImg"></div>
-                        <div className="logoText"></div>
-                    </div>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-
-                        {/* <ul className="menus"> */}
-                        {menuItems.map((menu, index) => {
-                            return (
-                                <Nav.Link as={'div'} key={index} className={onToggleMode(index)} >
-                                    <Link className="navItem" to={menu.title === "home" ? 'proyecto-react/' : `proyecto-react/category/${menu.title}`}>{menu.title}</Link>
-                                </Nav.Link>
-                                // <li className="menu-items" key={index}>
-                                // <Link to={menu.title === "home" ? 'proyecto-react/' : `proyecto-react/category/${menu.title}`}>{menu.title}</Link>
-                                // </li>
-                            );
-                        })}
-                        <Nav.Link as={'div'} className={cartToggle()}>
-                            <CartWidget />
-                        </Nav.Link>
-                        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown> */}
-                        {/* <li className="menu-items">
-                                    <CartWidget />
-                                </li> */}
-                        {/* </ul> */}
-
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-        {/* //         <div className="userContainer">
-        //             <div className="menu-items">
-        //                 <UserWidget />
-        //             </div>
-        //             {
-        //                 login === true ?
-        //                     <div className="loginText">
-        //                         <p id='userNameTop'>{user}</p> */}
-        {/* //                     </div>
-        //                     :
-        //                     null
-        //             }
-        //         </div> */}
-        {/* //     </div> */}
+            <Navbar expand="lg">
+                <Container>
+                    <Navbar.Brand>
+                        <div className='navBarLogo'>
+                            <div className="logoImg"></div>
+                            <div className="logoText"></div>
+                        </div>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            {menuItems.map((menu, index) => {
+                                return (
+                                    <Nav.Link as={'div'} key={index} className={onToggleMode(index)} onClick={() => closeToggle()} >
+                                        <Link to={menu.title === "home" ? 'proyecto-react/' : `proyecto-react/category/${menu.title}`} className="navItem" >{menu.title}</Link>
+                                    </Nav.Link>
+                                );
+                            })}
+                            <Nav.Link as={'div'} className={cartToggle()}>
+                                <CartWidget />
+                            </Nav.Link>
+                            <Nav.Link as={'div'} className={cartToggle()}>
+                                <UserWidget />
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         </header >
 
     )

@@ -53,8 +53,8 @@
 .productDescription{
     color: rgb(208, 208, 208);
     font-size: 16px;
-    margin: 20px 0 20px 0;
-    padding-bottom: 20px;
+    margin: 20px 0 0px 0;
+    padding-bottom: 10px;
     border-bottom: solid 1px #fff;
 }
 
@@ -94,7 +94,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
+    padding: 15px;
 }
 
 /*********** 992px MAX-WIDTH ***********/

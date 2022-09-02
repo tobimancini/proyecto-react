@@ -4,7 +4,6 @@
     width: 300px;
     background-color: #fff;
     color: #000;
-    margin-bottom: 0px;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -111,27 +110,27 @@
 
 @media screen and (max-width:768px){
     .item {
-        height: 230px;
-        width: 230px;
+        height: 200px;
+        width: 200px;
     }
     
     .itemTitle {
         font-size: 10px;
-        padding: 10px;
-        margin-bottom: 7px;
+        padding: 2px;
     }
     
     .itemImage {
-        height: 100px;
+        height: 90px;
     }
     
     .itemPrice {
-        font-size: 18px;
+        font-size: 14px;
+        padding: 5px;
     }
     
     .itemDetails {
-        bottom: 15px;
-        font-size: 18px;
+        bottom: 10px;
+        font-size: 16px;
     }
 }
 
@@ -141,20 +140,21 @@
     .item {
         height: 190px;
         width: 190px;
+        margin-bottom: 0px;
     }
     
     .itemTitle {
         font-size: 10px;
-        padding: 5px;
-        margin-bottom: 3px;
+        padding: 2px;
+        margin-bottom: 2px;
     }
     
     .itemImage {
-        height: 90px;
+        height: 80px;
     }
     
     .itemPrice {
-        font-size: 16px;
+        font-size: 14px;
         padding: 5px;
     }
     

@@ -2,6 +2,7 @@
     font-size: 35px;
     color: #000;
     transition: all 100ms ease-in-out;
+    cursor: pointer;
 }
 
 /*********** 992px MAX-WIDTH ***********/

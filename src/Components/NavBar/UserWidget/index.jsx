@@ -1,5 +1,5 @@
 import React from "react";
-import { BiUser} from 'react-icons/bi';
+import { BiUser } from 'react-icons/bi';
 import { Shop } from "../../../Context/ShopContext";
 import { useContext } from "react";
 import { useState } from "react";
@@ -14,14 +14,27 @@ const UserWidget = () => {
 
     return (
         <>
-            <button type="button" aria-haspopup="menu" aria-expanded={dropdown ? "true" : "false"} onClick={() => setDropdown((prev) => !prev)}>
+            <div className="navItem" aria-haspopup="menu" aria-expanded={dropdown ? "true" : "false"} onClick={() => setDropdown((prev) => !prev)}>
                 <BiUser className="userWidget" />
-            </button>
+                <Dropdown items={logged} dropdown={dropdown} setDropdown={setDropdown} />
+            </div>
 
-            <Dropdown items={logged} dropdown={dropdown} setDropdown={setDropdown} />
         </>
 
     )
 }
 
 export default UserWidget;
+
+{/* <div className="menu-items">
+    <UserWidget />
+</div>
+{
+    login === true ?
+        <div className="loginText">
+            <p id='userNameTop'>{user}</p>
+        </div>
+        :
+        null
+} */}
+

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Shop } from '../../../Context/ShopContext';
+import './styles.css'
 
 const Dropdown = ({ items ,dropdown, setDropdown }) => {
 
@@ -29,16 +30,16 @@ const Dropdown = ({ items ,dropdown, setDropdown }) => {
    
 
     return (
-        <ul className={`dropdown ${dropdown ? "show" : ""}`} >
+        <ul className={`dropdownMe ${dropdown ? "show" : "notShow"}`} >
             {items.map((item, index) => (
 
                 login === true ?
-                    <li key={index} className="menu-items" onClick={item.title === "log out" ? () => logOut() : ()=>openModalPurchases()} >
-                        <Link to='proyecto-react/' >{item.title}</Link>
+                    <li key={index} className="dropdownList" onClick={item.title === "log out" ? () => logOut() : ()=>openModalPurchases()} >
+                        <Link className="dropdownItem" to='proyecto-react/' >{item.title}</Link>
                     </li>
                     :
-                    <li key={index} className="menu-items" onClick={()=>openLoginModal(item.title)} >
-                        <Link to='proyecto-react/'>{item.title}</Link>
+                    <li key={index} className="dropdownList" onClick={()=>openLoginModal(item.title)} >
+                        <Link className="dropdownItem" to='proyecto-react/'>{item.title}</Link>
                     </li>                
             ))}
         </ul>
