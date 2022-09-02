@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/proyecto-react/static/css/main.5f4822b2.css",
-    "main.js": "/proyecto-react/static/js/main.1a9d542c.js",
+    "main.css": "/proyecto-react/static/css/main.c5dae03b.css",
+    "main.js": "/proyecto-react/static/js/main.527672a3.js",
     "static/js/787.b84ff08a.chunk.js": "/proyecto-react/static/js/787.b84ff08a.chunk.js",
     "static/media/bgimage.jpeg": "/proyecto-react/static/media/bgimage.55cdb767ebfa48899741.jpeg",
     "static/media/racoonOrange.png": "/proyecto-react/static/media/racoonOrange.c17493dd24ae59327555.png",
@@ -12,12 +12,12 @@
     "static/media/retroFooter.jpg": "/proyecto-react/static/media/retroFooter.d072da9e0ffaaa672a0e.jpg",
     "static/media/racoonTxtBlack.png": "/proyecto-react/static/media/racoonTxtBlack.9deaac6cc0db2f98de28.png",
     "index.html": "/proyecto-react/index.html",
-    "main.5f4822b2.css.map": "/proyecto-react/static/css/main.5f4822b2.css.map",
-    "main.1a9d542c.js.map": "/proyecto-react/static/js/main.1a9d542c.js.map",
+    "main.c5dae03b.css.map": "/proyecto-react/static/css/main.c5dae03b.css.map",
+    "main.527672a3.js.map": "/proyecto-react/static/js/main.527672a3.js.map",
     "787.b84ff08a.chunk.js.map": "/proyecto-react/static/js/787.b84ff08a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f4822b2.css",
-    "static/js/main.1a9d542c.js"
+    "static/css/main.c5dae03b.css",
+    "static/js/main.527672a3.js"
   ]
 }
