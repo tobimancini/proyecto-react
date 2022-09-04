@@ -1,13 +1,13 @@
 import React from 'react'
 import './styles.css';
 
-const PurchaseItem = (purchase) => {
+const PurchaseItem = (props) => {
 
-    let date = purchase.purchase.createdAt;
+    let date = props.purchase.createdAt;
 
     return (
-        purchase.purchase.items.map(item => {
-            return <div className='itemContainer'>
+        props.purchase.items.map((item) => {
+            return <div className='itemContainer' key={date+", "+item.title} >
                 <div className='product'>
                     <img className='itemImg' src={item.image} alt="productImg" />
                     <p className='titleItem'>{item.title}</p>

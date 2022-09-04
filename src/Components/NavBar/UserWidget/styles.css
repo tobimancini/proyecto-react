@@ -1,8 +1,24 @@
+.loginContain{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
 .userWidget{
     font-size: 27px;
     color: #000;
     transition: all 100ms ease-in-out;
-    cursor: pointer;
+}
+
+
+#userNameTop{
+    height: auto;
+    margin-bottom: 0px;
+    margin-left: 10px;
 }
 
 /*********** 992px MAX-WIDTH ***********/

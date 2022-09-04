@@ -1,6 +1,6 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Shop } from "../../Context/ShopContext";
 import CartWidget from "./CartWidget";
 import { menuItems } from "./NavItems";
@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const NavbarMe = () => {
 
     const { login, user } = useContext(Shop);
+    const [expanded, setExpanded] = useState(false);
 
     const onToggleMode = (index) => {
         if (window.screen.width < 992) {
@@ -37,18 +38,10 @@ const NavbarMe = () => {
         return window.screen.width < 992 ? 'nav-link toggleNaranja' : "nav-link noToggle"
     }
 
-    const closeToggle = () => {
-        let btnToggler = document.querySelector('.navbar-toggler');
-        let navbarToggle = document.getElementById('navbar-collapse');
-
-        btnToggler.classList.add('collapsed');
-        navbarToggle.classList.remove('show');
-    }
-
     return (
 
         <header>
-            <Navbar expand="lg">
+            <Navbar expand="lg" expanded={expanded}>
                 <Container>
                     <Navbar.Brand>
                         <div className='navBarLogo'>
@@ -56,21 +49,21 @@ const NavbarMe = () => {
                             <div className="logoText"></div>
                         </div>
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")}/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             {menuItems.map((menu, index) => {
                                 return (
                                     <Nav.Link as={'div'} key={index} className={onToggleMode(index)} >
-                                        <Link onClick={() => closeToggle()} to={menu.title === "home" ? 'proyecto-react/' : `proyecto-react/category/${menu.title}`} className="navItem" >{menu.title}</Link>
+                                        <Link onClick={() => setExpanded(false)} to={menu.title === "home" ? 'proyecto-react/' : `proyecto-react/category/${menu.title}`} className="navItem" >{menu.title}</Link>
                                     </Nav.Link>
                                 );
                             })}
                             <Nav.Link as={'div'} className={cartToggle()}>
-                                <CartWidget />
+                                <CartWidget closeToggle={setExpanded} />
                             </Nav.Link>
                             <Nav.Link as={'div'} className={cartToggle()}>
-                                <UserWidget login={login} user={user} />
+                                <UserWidget login={login} user={user} setExpanded={setExpanded} expanded={expanded} />                                
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

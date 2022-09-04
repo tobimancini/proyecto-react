@@ -16,6 +16,7 @@ const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
     const [productosFiltrados, setProductosFiltrados] = useState([]);
     const {enqueueSnackbar} = useContext(Shop);
+    const [expanded, setExpanded] = useState(false);
 
     const params = useParams();
 

@@ -6,30 +6,25 @@ import { useState } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import './styles.css';
 
-const UserWidget = (login, user) => {
+const UserWidget = (props) => {
 
     const [dropdown, setDropdown] = useState(false);
     const { logged } = useContext(Shop);
 
+    console.log(props);
+
 
     return (
-        <>
-            <div className="navItem" aria-haspopup="menu" aria-expanded={dropdown ? "true" : "false"} onClick={() => setDropdown((prev) => !prev)}>
-                <FaUser className="userWidget" />
-                <Dropdown items={logged} dropdown={dropdown} setDropdown={setDropdown}  />
-            </div>
-
+        <div className="navItem loginContain" aria-haspopup="menu" aria-expanded={dropdown ? "true" : "false"} onClick={() => setDropdown((prev) => !prev)}>
+            <FaUser className="userWidget" />
+            <Dropdown items={logged} dropdown={dropdown} setDropdown={setDropdown} setExpanded={props.setExpanded} expanded={props.expanded} />
             {
-                login === true ?
-                    <div className="loginText">
-                        <p id='userNameTop'>{user}</p>
-                    </div>
+                props.login === true ?
+                    <p id='userNameTop'>{props.user}</p>
                     :
                     null
             }
-
-
-        </>
+        </div>
 
     )
 }
